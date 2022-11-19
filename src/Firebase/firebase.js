@@ -41,15 +41,11 @@ export const retrieveToken = () => {
     });
   }
 
-// Add the public key generated from the console here.
-// messaging.getToken({vapidKey: "BP2vnUBO-X6Aw6KNtsS9Pst64XUuK_Pdscd70wrrylC_-g-oGW7nABQ6P-Mdr32jBL8isvGGB4Hn2MSb73DzwVk"});
-
-// function requestPermission() {
-//     console.log('Requesting permission...');
-//     Notification.requestPermission().then((permission) => {
-//       if (permission === 'granted') {
-//         console.log('Notification permission granted.');
-
-// module.exports = { messaging }
-
-// export default messaging
+  export const onMessageListener = () =>
+  new Promise((resolve) => {
+    console.log("onmessage thing works")
+    onMessage(messaging, (payload) => {
+      console.log("payload", payload)
+      resolve(payload);
+    });
+  });
