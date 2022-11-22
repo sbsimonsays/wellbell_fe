@@ -31,8 +31,10 @@ const Notification = () => {
     .catch((err) => console.log('failed: ', err));
 
   return (
+    <div>
      <Toaster/>
+     </div>
   )
 }
 
-export default Notification
+export default Notification;
