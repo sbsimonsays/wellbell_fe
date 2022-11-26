@@ -1,10 +1,12 @@
 import React from 'react'
-import Reminders from '../Components/SetReminders'
+import Reminders from '../Components/SetReminders';
+import WellnessForm from '../Components/WellnessForm';
 
 function WellnessCheck() {
+
   return (
     <div>
-       <WellNessForm/>
+       <WellnessForm />
     </div>
   )
 }
