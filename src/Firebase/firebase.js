@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-
+import {GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth"
 // import { getAnalytics } from "firebase/analytics";
 // import { getMessaging } from "firebase/messaging/sw";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -23,6 +23,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
+//messaging
 const messaging = getMessaging();
 
 export const retrieveToken = () => {
@@ -49,3 +50,30 @@ export const retrieveToken = () => {
       resolve(payload);
     });
   });
+
+//Auth
+
+export const auth = getAuth();
+auth.useDeviceLanguage();
+
+const googleProvider = new GoogleAuthProvider();
+export const signInWithGoogle = () => {
+    try {
+        signInWithPopup(auth, googleProvider)
+        .then((res) => {
+            const user = res.user;
+            console.log(user)
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export const signOut = async () => {
+    try {
+        await auth.signOut();
+        alert("you are signed out")
+    } catch(err) {
+        console.log(err)
+    }
+};

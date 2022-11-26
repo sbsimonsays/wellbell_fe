@@ -1,32 +1,37 @@
 
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Notification from './Modals/Notification';
-import Landing from './Pages/Login';
+// import Notification from './Modals/Notification';
+import LandingPage from './Pages/LandingPage';
+import FourOFour from './Pages/FourOFour';
 import SideNav from './Components/SideNav';
 import Login from './Pages/Login';
 import SetReminders from './Pages/SetReminders';
 import CurrentReminders from './Pages/CurrentReminders';
-import "./App.css";
+import { UserProvider } from './Providers/UserProvider';
 // import messaging  from "../src/Firebase/firebase-messaging-sw"
 // import firebase from "../src/Firebase/firebase"
 // import { retrieveToken } from "../src/Firebase/firebase";
-import Notification from "./Notification";
+
 
 function App() {
   return (
-    <div>
+   
+    <UserProvider>
       <Router>
       <SideNav/>
-      <Routes>
-      <Route path="/" element={<Landing/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/setreminder" element={<SetReminders/>}/>
-      <Route path="/currentreminders" element={<CurrentReminders/>}/>
-   <Notification/>
-   </Routes>
-   </Router>
-  </div>
+        <Routes>
+          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/setreminder" element={<SetReminders/>}/>
+          <Route path="/currentreminders" element={<CurrentReminders/>}/>
+          <Route path="*" element={<FourOFour/>}/>
+
+      {/* <Notification/> */}
+        </Routes>
+      </Router>
+   </UserProvider>
+ 
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import UserAuth from '../Components/UserAuth'
+import UserAuth from '../Components/UserAuth';
 
 
 function Login() {
@@ -10,4 +10,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Login;

@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
 
 function Landing() {
   return (
@@ -10,7 +10,7 @@ function Landing() {
       <button>Physical</button>
       <button>Nutrition</button>
       <button>Selfcare</button>
-      <Link><button>Continue</button></Link>
+     <button>Continue</button>
     </div>
     //Hidden until one above is clicked//
     //should be a link to login page

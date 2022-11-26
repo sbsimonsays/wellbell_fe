@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import {retrieveToken, onMessageListener} from "../src/Firebase/firebase"
+import {retrieveToken, onMessageListener} from "../Firebase/firebase"
 import toast, { Toaster } from 'react-hot-toast';
 
 
