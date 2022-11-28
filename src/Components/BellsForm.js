@@ -2,19 +2,19 @@ import React, {useState, useEffect } from "react";
 import axios from "axios"
 import SetSingleBell from "./SetSingleBell";
 
-const API = process.env.REACT_APP_API_URL;
+// const API = process.env.REACT_APP_API_URL;
 
 function BellsForm() {
-  const [bells, setBells] = useState([]);
+  // const [bells, setBells] = useState([]);
 
-  useEffect(() => {
-    axios.get(`${API}/bells`)
-    .then(res => {
-      setBells(res.data.payload)
-      console.log(bells)
-      })
-    .catch(err => console.err);
-  }, [])
+  // useEffect(() => {
+  //   axios.get(`${API}/bells`)
+  //   .then(res => {
+  //     setBells(res.data.payload)
+  //     console.log(bells)
+  //     })
+  //   .catch(err => console.err);
+  // }, [])
 
 
 
