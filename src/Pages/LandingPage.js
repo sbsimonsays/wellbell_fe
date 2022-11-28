@@ -6,7 +6,7 @@ import Landing from "../Components/Landing";
 function LandingPage( { socket }) {
   return (
     <div>
-      <Landing/>
+      <Landing socket={ socket }/>
      
     </div>
     //Hidden until one above is clicked//

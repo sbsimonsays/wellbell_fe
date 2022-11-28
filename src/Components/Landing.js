@@ -1,16 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import Bells from "./Bells";
+import { ToastContainer } from "react-toastify";
 // import {Link} from "react-router-dom"
 
-function Landing({socket}) {
+function Landing({socket, bells}) {
   const [hour, setHour] = useState(0);
   const [minute, setMinute] = useState(0);
   const [title, setTitle] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     //sends the event details via Socket.io
-    // socket.emit("newEvent", { hour, minute, title }); ////////////
+    socket.emit("newEvent", { hour, minute, title });
     //👇🏻 shows toast notifications
     toast.success(`${title} is successfully added!`);
     setHour("");
@@ -69,6 +72,8 @@ function Landing({socket}) {
           </div>
           <button>Submit</button>
         </form>
+        <Bells bells= { bells }/>
+        <ToastContainer />
 
 
 

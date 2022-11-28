@@ -1,7 +1,10 @@
 
 import './App.css';
+import { useState, useEffect } from 'react';
 import socketIO from "socket.io-client";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { retrieveToken, onMessageListener } from "../src/Firebase/firebase.js"
+import { toast } from "react-toastify";
 // import Notification from './Modals/Notification';
 import LandingPage from './Pages/LandingPage';
 import FourOFour from './Pages/FourOFour';
@@ -18,9 +21,28 @@ import { UserProvider } from './Providers/UserProvider';
 
 const socket = socketIO.connect("http://localhost:1236");
 function App() {
+  const [bells, setBells] = useState([]);
+  useEffect(() => {
+    //👉🏻Logs the device token to the console
+    retrieveToken();
+    //👉🏻Listen and logs the push messages from the server.
+    onMessageListener()
+      .then((payload) => {
+        console.log("From Message", payload);
+      })
+      .catch((err) => console.log("failed: ", err));
+
+    socket.on("sendBells", (bells) => {
+      setBells(bells);
+    });
+    //Listens for the notification from the server
+    socket.on("notification", (data) => {
+      toast.success(` It's time for ${data.title}`);
+    });
+  }, []);
   return (
    
-    <UserProvider>
+    // <UserProvider>
       <Router>
       <SideNav/>
         <Routes>
@@ -33,9 +55,11 @@ function App() {
       {/* <Notification/> */}
         </Routes>
       </Router>
-   </UserProvider>
+  //  </UserProvider>
  
   );
 }
 
 export default App;
+
+
