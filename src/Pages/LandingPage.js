@@ -2,10 +2,12 @@ import React from "react";
 import Landing from "../Components/Landing";
 
 
-function LandingPage() {
+
+function LandingPage( { socket }) {
   return (
     <div>
-      <Landing/>
+      <Landing socket={ socket }/>
+     
     </div>
     //Hidden until one above is clicked//
     //should be a link to login page
