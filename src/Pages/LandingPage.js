@@ -4,7 +4,7 @@ import Landing from "../Components/Landing";
 
 function LandingPage() {
   return (
-    <div>
+    <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
       <Landing/>
     </div>
     //Hidden until one above is clicked//

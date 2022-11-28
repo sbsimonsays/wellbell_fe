@@ -12,7 +12,7 @@ function UserAuth() {
   const history = useNavigate();
   useEffect(() => {
     if (user) {
-      navigate("/WellnessForm");
+      navigate("/loggedInPage");
     }
   }, [user, navigate]);
 
@@ -20,7 +20,7 @@ function UserAuth() {
     <div>
         <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
           <div>
-            <a href="/">
+            <a href="/setreminder">
               <h3 className="text-4xl font-bold text-purple-600">Logo</h3>
             </a>
           </div>
