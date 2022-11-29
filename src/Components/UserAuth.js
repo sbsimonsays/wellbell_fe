@@ -12,7 +12,7 @@ function UserAuth() {
   const history = useNavigate();
   useEffect(() => {
     if (user) {
-      navigate("/loggedInPage");
+      navigate("/WellnessForm");
     }
   }, [user, navigate]);
 
@@ -119,7 +119,8 @@ function UserAuth() {
               </button>
             </div>
             {/* <button onClick={signInWithGoogle}>Sign in With google</button> */}
-            <button onClick={signOut}> sign out</button>
+    {/* move to user profile or nav or somewhere else */}
+            {/* <button onClick={signOut}> sign out</button> */}
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { UserContext } from "../Providers/UserProvider";
 import { useNavigate} from "react-router-dom";
 import { signOut } from "../Firebase/firebase";
+import WellnessForm from "../Components/WellnessForm";
 
 
 export const LoggedInPage = () => {
@@ -29,7 +30,6 @@ export const LoggedInPage = () => {
   if ( user ){
     return (
       <div>
-        <h1> YOU ARE NOW LOGGED IN : </h1>
         <h1>Welcome {user.displayName} !</h1>
         <div>
           <img src = {user.photoURL}
@@ -37,6 +37,7 @@ export const LoggedInPage = () => {
             className="user-image"
             alt="its the users head"
             ></img>
+            <div><WellnessForm /></div>
         </div>
         email: {user.email}
         <button onClick={handleLogout}> LOG OUT</button>
