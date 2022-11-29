@@ -1,15 +1,15 @@
 import React from 'react'
-import RemindersForm from '../Components/RemindersForm'
+import BellsForm from '../Components/BellsForm';
 import WellnessForm from '../Components/WellnessForm'
 
 
 function SetReminders() {
   return (
     <div>
-        <WellnessForm />     
-        <RemindersForm/>
-    </div>
+    {/* <WellnessForm /> */}
+    <BellsForm/>
+</div>
   )
 }
 
-export default SetReminders;
+export default SetReminders
