@@ -3,13 +3,13 @@ import RemindersForm from '../Components/RemindersForm'
 import WellnessForm from '../Components/WellnessForm'
 
 
-function setReminders() {
+function SetReminders() {
   return (
     <div>
-        <WellnessForm />
+        <WellnessForm />     
         <RemindersForm/>
     </div>
   )
 }
 
-export default setReminders;
+export default SetReminders;

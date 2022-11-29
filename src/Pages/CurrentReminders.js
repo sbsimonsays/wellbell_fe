@@ -1,13 +1,13 @@
-import React from 'react'
-import DisplayCurrentReminders from '../Components/DisplayCurrentReminders'
+import React from 'react';
+import DisplayCurrentReminders from '../Components/DisplayCurrentReminders';
 
 
 function CurrentReminders() {
   return (
     <div>
-        <DisplayCurrentReminders/>
+        <DisplayCurrentReminders />
     </div>
   )
 }
 
-export default CurrentReminders
+export default CurrentReminders;
