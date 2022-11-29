@@ -20,10 +20,10 @@ function Landing({socket, bells}) {
     setMinute("");
     setTitle("");}
   return (
-    <div>
-      <h1>Be Well</h1>
+    <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
+      <h1 className="text-3xl text-gray-700 font-bold mb-5">Be Well</h1>
       <h2>Helping you take care of you</h2>
-      <p>What type of reminder would help you today?</p>
+      <p className="text-gray-500 text-lg">What type of reminder would help you today?</p>
       <button>Physical</button>
       <button>Nutrition</button>
       <button>Selfcare</button>

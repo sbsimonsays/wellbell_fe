@@ -57,9 +57,9 @@ export const auth = getAuth();
 auth.useDeviceLanguage();
 
 const googleProvider = new GoogleAuthProvider();
-export const signInWithGoogle = () => {
+export const signInWithGoogle = async() => {
     try {
-        signInWithPopup(auth, googleProvider)
+        await signInWithPopup(auth, googleProvider)
         .then((res) => {
             const user = res.user;
             console.log(user)

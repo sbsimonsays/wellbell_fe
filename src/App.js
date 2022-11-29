@@ -6,6 +6,9 @@ import LandingPage from './Pages/LandingPage';
 import FourOFour from './Pages/FourOFour';
 import SideNav from './Components/SideNav';
 import Login from './Pages/Login';
+import { LoggedInPage } from './Pages/LoggedInPage';
+import AboutPage from './Pages/AboutPage';
+import RewardsPage from './Pages/RewardsPage';
 import SetReminders from './Pages/SetReminders';
 import CurrentReminders from './Pages/CurrentReminders';
 import { UserProvider } from './Providers/UserProvider';
@@ -19,10 +22,14 @@ function App() {
    
     <UserProvider>
       <Router>
-      <SideNav/>
+        <SideNav />
+        {/* <LandingPage /> */}
         <Routes>
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/loggedInPage" element={<LoggedInPage/>}/>
+          <Route path="/about" element={<AboutPage/>}/>
+          <Route path="/rewards" element={<RewardsPage/>}/>
           <Route path="/setreminder" element={<SetReminders/>}/>
           <Route path="/currentreminders" element={<CurrentReminders/>}/>
           <Route path="*" element={<FourOFour/>}/>
