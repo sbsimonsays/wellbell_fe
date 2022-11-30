@@ -22,7 +22,7 @@ function App() {
     <AuthContextProvider>
       <Router>
         <SideNav />
-        {/* <LandingPage /> */}
+     
         <Routes>
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/login" element={<Login/>}/>
