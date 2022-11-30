@@ -24,7 +24,21 @@ function Landing({socket, bells}) {
       <h1 className="text-3xl text-gray-700 font-bold mb-5">Be Well</h1>
       <h2>Helping you take care of you</h2>
       <p className="text-gray-500 text-lg">What type of reminder would help you today?</p>
-      <button>Physical</button>
+      <div>
+        <button
+              aria-label="Login with Google"
+              type="button"
+              className="flex items-center justify-center w-full p-2 space-x-4 border rounded-lg focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                className="w-5 h-5 fill-current"
+              >
+              </svg>
+              <p>Physical</p>
+            </button>
+            </div>
       <button>Nutrition</button>
       <button>Selfcare</button>
      <button>Continue</button>

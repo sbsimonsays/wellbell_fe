@@ -1,13 +1,9 @@
-// Import the functions you need from the SDKs you need
+// Imports
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-import {GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth"
-// import { getAnalytics } from "firebase/analytics";
-// import { getMessaging } from "firebase/messaging/sw";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
+// Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCtYb0I4aPnZKPbB4bbQ0VB7rpHZqha06s",
@@ -20,8 +16,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
+
 
 //messaging
 const messaging = getMessaging();
@@ -53,27 +49,6 @@ export const retrieveToken = () => {
 
 //Auth
 
-export const auth = getAuth();
-auth.useDeviceLanguage();
+export const auth = getAuth(app);
 
-const googleProvider = new GoogleAuthProvider();
-export const signInWithGoogle = async() => {
-    try {
-        await signInWithPopup(auth, googleProvider)
-        .then((res) => {
-            const user = res.user;
-            console.log(user)
-        })
-    } catch (err) {
-        console.log(err)
-    }
-}
 
-export const signOut = async () => {
-    try {
-        await auth.signOut();
-        alert("you are signed out")
-    } catch(err) {
-        console.log(err)
-    }
-};
