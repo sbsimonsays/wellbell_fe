@@ -1,37 +1,30 @@
 import React, {useState, useEffect } from "react";
-import axios from "axios"
 import SetSingleBell from "./SetSingleBell";
 
-// const API = process.env.REACT_APP_API_URL;
-
 function BellsForm() {
-  // const [bells, setBells] = useState([]);
+  
+  const [selectedCategories, setSelectedCategories] = useState({
+    bell1: "",
+    bell2: "",
+    bell3: "",
+    bell4: "",
+    bell5: ""});
 
-  // useEffect(() => {
-  //   axios.get(`${API}/bells`)
-  //   .then(res => {
-  //     setBells(res.data.payload)
-  //     console.log(bells)
-  //     })
-  //   .catch(err => console.err);
-  // }, [])
-
-
-
-
-
-
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
   return (
     <div>
       <h1>Hello</h1>
       <form>
-        <p>Reminder 1 <SetSingleBell/></p>
-        <p>Reminder 2 <SetSingleBell/></p>
-        <p>Reminder 3 <SetSingleBell/></p>
-        <p>Reminder 4 <SetSingleBell/></p>
-        <p>Reminder 5 <SetSingleBell/></p>
+        <p>Bell 1 <SetSingleBell/></p>
+        <p>Bell 2 <SetSingleBell/></p>
+        <p>Bell 3 <SetSingleBell/></p>
+        <p>Bell 4 <SetSingleBell/></p>
+        <p>Bell 5 <SetSingleBell/></p>
         
-        <button>Set it and forget it</button>
+        <input onSubmit={handleSubmit} type="submit" value="Set Bell"/>
       </form>
     </div>
   );
