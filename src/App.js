@@ -13,6 +13,9 @@ import CurrentReminders from './Pages/CurrentReminders';
 import Protected from './Components/Protected';
 import { AuthContextProvider } from './context/AuthContext';
 import FourOFour from './Pages/FourOFour';
+import HomePage from './Components/HomePage';
+import LoginPage from './Components/LoginPage';
+
 // import messaging  from "../src/Firebase/firebase-messaging-sw";
 
 
@@ -21,11 +24,11 @@ function App() {
    
     <AuthContextProvider>
       <Router>
-        <SideNav />
+        {/* <SideNav /> */}
      
         <Routes>
-          <Route path="/" element={<LandingPage/>}/>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
           <Route path="/about" element={<AboutPage/>}/>
           <Route path="/rewards" element={<RewardsPage/>}/>
           <Route path="/setreminder" element={<SetReminders/>}/>
