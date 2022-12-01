@@ -35,7 +35,7 @@ function App() {
           <Route path="/currentreminders" element={<CurrentReminders/>}/>
           <Route path="*" element={<FourOFour/>}/>
           <Route
-            path='/useraccount'
+            path='/dashboard'
             element={
               <Protected>
                 <UserAccount />
