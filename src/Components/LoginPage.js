@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 function LoginPage() {
   const { googleSignIn, user } = UserAuth();
@@ -40,14 +41,20 @@ function LoginPage() {
       <div className="signin">
         <form>
           <label htmlFor="username">Username</label>
-          <input placeholder="Username"></input>
+          <input text='text' placeholder="Username"></input>
           <br />
           <label htmlFor="password">Password</label>
-          <input placeholder="Password"></input>
+          <input type='text' placeholder="Password"></input>
           {/* <input value={Submit} type='submit'> */}
           {/* </input> */}
         </form>
       </div>
+      <br/>
+          <br/>
+
+          <Link to='/'>
+            <button>Return Home</button>
+          </Link>
 
       <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
         <div className="my-6 space-y-2">
