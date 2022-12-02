@@ -3,6 +3,7 @@ import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import {Link} from 'react-router-dom'
+import SideNav from "./SideNav";
 
 function LoginPage() {
   const { googleSignIn, user } = UserAuth();
@@ -48,7 +49,7 @@ function LoginPage() {
           <br/>
           <br/>
 {/* - Where does Get started button GO?????????????????????????????????????????????? */}
-          <Link to='/'>
+          <Link to='/landing'>
             <button>Submit</button>
           </Link>
         </form>

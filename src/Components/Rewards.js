@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import {Link} from 'react'
 // import Reward from ''
 import axios from 'axios'
+import SideNav from './SideNav';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -25,7 +26,7 @@ useEffect(() =>{
           <button>Home</button>
         </Link>
     <div>
-
+<SideNav/>
     </div>
 
 

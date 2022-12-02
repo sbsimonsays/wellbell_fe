@@ -1,4 +1,6 @@
 import React from 'react';
+import DisplayCurrentReminders from '../Components/DisplayCurrentReminders';
+import Landing from '../Components/Landing';
 import { UserAuth } from '../context/AuthContext';
 
 const Account = () => {
@@ -18,6 +20,8 @@ const Account = () => {
       <div>
         <p>Welcome, {user?.displayName}</p>
       </div>
+      <DisplayCurrentReminders/>
+      <Landing />
       <button onClick={handleSignOut} className='border py-2 px-5 mt-10'>
         Logout
       </button>
