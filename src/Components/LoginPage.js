@@ -45,8 +45,12 @@ function LoginPage() {
           <br />
           <label htmlFor="password">Password</label>
           <input type='text' placeholder="Password"></input>
-          {/* <input value={Submit} type='submit'> */}
-          {/* </input> */}
+          <br/>
+          <br/>
+{/* - Where does Get started button GO?????????????????????????????????????????????? */}
+          <Link to='/'>
+            <button>Submit</button>
+          </Link>
         </form>
       </div>
       <br/>

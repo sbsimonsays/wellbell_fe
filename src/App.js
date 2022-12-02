@@ -15,6 +15,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import FourOFour from './Pages/FourOFour';
 import HomePage from './Components/HomePage';
 import LoginPage from './Components/LoginPage';
+import Rewards from './Components/Rewards';
 
 // import messaging  from "../src/Firebase/firebase-messaging-sw";
 
@@ -30,7 +31,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/about" element={<AboutPage/>}/>
-          <Route path="/rewards" element={<RewardsPage/>}/>
+          <Route path="/rewards" element={<Rewards/>}/>
           <Route path="/setreminder" element={<SetReminders/>}/>
           <Route path="/currentreminders" element={<CurrentReminders/>}/>
           <Route path="*" element={<FourOFour/>}/>
