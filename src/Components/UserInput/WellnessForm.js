@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useContext } from "react";
-import { UserAuth } from "../context/AuthContext";
+import { UserAuth } from "../../context/AuthContext";
 
 function WellnessForm() {
   const { logOut, user } = UserAuth();

@@ -15,7 +15,7 @@ function HomePage() {
 <img src='../freelan.webp' alt='wfh' width='75%' heigh='5px'></img>
 </div>
 
-    <Link to='/login'>
+    <Link to='/newuser'>
     <button className='start_button'>Get Started</button>
     </Link>
     <br/>
