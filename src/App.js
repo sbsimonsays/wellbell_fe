@@ -6,6 +6,7 @@ import SideNav from './Components/SideNav';
 // import Login from './Pages/Login';
 import UserAccount from './Pages/UserAccount';
 import About from './Pages/About';
+import Header from './Components/Header';
 import Rewards from './Pages/Rewards';
 import SetReminders from './Pages/SetReminders';
 import Protected from './Components/Protected';
@@ -19,11 +20,11 @@ import LoginPage from './Components/Login/ExistingUserLogin';
 
 function App() {
   return (
-   
+ 
     <AuthContextProvider>
       <Router>
         {/* <SideNav /> */}
-     
+        <Header />
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<LoginPage/>}/>
@@ -43,7 +44,7 @@ function App() {
         </Routes>
       </Router>
    </AuthContextProvider>
- 
+
   );
 }
 

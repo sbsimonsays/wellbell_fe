@@ -23,6 +23,7 @@ function ExistingUserLogin() {
     }
   }, [user]);
   return (
+    <section>
     <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
       <div>
         {/* <a href="/about"> */}
@@ -82,6 +83,7 @@ function ExistingUserLogin() {
       </div>
       <img></img>
     </div>
+    </section>
   );
 }
 
