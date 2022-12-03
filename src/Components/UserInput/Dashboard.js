@@ -1,5 +1,4 @@
 import React from 'react'
-import 
 
 export default function Dashboard({reminderType}) {
   console.log(reminderType)
