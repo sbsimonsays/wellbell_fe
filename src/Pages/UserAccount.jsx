@@ -1,6 +1,6 @@
 import React from 'react';
-import DisplayCurrentReminders from '../Components/DisplayCurrentReminders';
-import Landing from '../Components/Landing';
+import Dashboard from '../Components/Dashboard';
+import SideNav from '../Components/SideNav';
 import { UserAuth } from '../context/AuthContext';
 
 const Account = () => {
@@ -22,6 +22,12 @@ const Account = () => {
       </div>
       <DisplayCurrentReminders/>
       <Landing />
+      <SideNav/>
+      <h1 className='text-center text-2xl font-bold pt-12'>{user?.displayName}'s Dashboard</h1>
+      {/* <div>
+        <p>Welcome, {user?.displayName}!</p>
+      </div> */}
+      <Dashboard/>
       <button onClick={handleSignOut} className='border py-2 px-5 mt-10'>
         Logout
       </button>
