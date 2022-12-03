@@ -13,10 +13,9 @@ import CurrentReminders from './Pages/CurrentReminders';
 import Protected from './Components/Protected';
 import { AuthContextProvider } from './context/AuthContext';
 import FourOFour from './Pages/FourOFour';
-import Home from './Pages/Home';
-import ExistingUserLogin from './Components/Login/ExistingUserLogin';
-import NewUser from './Components/Login/NewUser';
-import UserIntakeForm from './Components/UserInput/UserIntakeForm';
+import HomePage from './Components/HomePage';
+import LoginPage from './Components/LoginPage';
+import Rewards from './Components/Rewards';
 
 // import messaging  from "../src/Firebase/firebase-messaging-sw";
 
@@ -29,11 +28,9 @@ function App() {
         {/* <SideNav /> */}
      
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/login" element={<ExistingUserLogin/>}/>
-          <Route path="/newuser" element={< NewUser/>}/>
-          <Route path="/userintake" element={< UserIntakeForm/>}/>
-          <Route path="/about" element={<About/>}/>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/about" element={<AboutPage/>}/>
           <Route path="/rewards" element={<Rewards/>}/>
           <Route path="/setreminder" element={<SetReminders/>}/>
           <Route path="/currentreminders" element={<CurrentReminders/>}/>

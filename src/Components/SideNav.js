@@ -14,6 +14,7 @@ const SideNav = () => {
   return (
     <nav>
       <div className='flex justify-between bg-gray-200 w-full p-4'>
+      <img src='../wellbell.png' alt='logo' width='200' height='10%'></img>
         <NavLink className="nav-link" to="/CurrentReminders">
           reminders</NavLink>
         <NavLink className="nav-link" to="/Rewards">rewards</NavLink>
