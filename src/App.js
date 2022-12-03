@@ -7,6 +7,7 @@ import LandingPage from './Pages/LandingPage';
 // import Login from './Pages/Login';
 import UserAccount from './Pages/UserAccount';
 import About from './Pages/About';
+import Header from './Components/Header';
 import Rewards from './Pages/Rewards';
 import SetReminders from './Pages/SetReminders';
 import CurrentReminders from './Pages/CurrentReminders';
@@ -23,11 +24,11 @@ import UserIntakeForm from './Components/UserInput/UserIntakeForm';
 
 function App() {
   return (
-   
+ 
     <AuthContextProvider>
       <Router>
         {/* <SideNav /> */}
-     
+        <Header />
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<ExistingUserLogin/>}/>
@@ -50,7 +51,7 @@ function App() {
         </Routes>
       </Router>
    </AuthContextProvider>
- 
+
   );
 }
 
