@@ -1,10 +1,21 @@
 import React, {useState, useEffect } from "react";
 import axios from "axios"
 
-function UserIntakeForm() {
+const API = process.env.REACT_APP_API_URL;
 
-const[reminderType, setReminderType]= useState("")
+export default function UserIntakeForm() {
+
+const[reminderType, setReminderType]= useState("Health")
 const [toggle, setToggle] = useState(false);
+const [bells, setBells] = useState([]);
+
+    useEffect(() => {
+      axios.get(`${API}/bells`)
+      .then(res => {
+        setBells(res.data.payload)
+        })
+      .catch(err => console.err);
+    }, [])
 
 const handleClick = (e) => {
   e.preventDefault();
@@ -16,6 +27,7 @@ const resetRadioState = () => {
   setReminderType('');
 }
 
+let filteredBells= []
 
   return (
     <div>
@@ -26,15 +38,22 @@ const resetRadioState = () => {
             <br/> */}
 
             <p>Select the type of reminders you wish to receive</p>
-            <input type="radio"  id="physical" onChange={handleClick} checked={toggle} value="physical"></input>
-            <label htmlFor="physical">Physical Wellness</label>
-
-            <input type="radio" id="nutrition" onChange={handleClick} checked={reminderType === "Nutrition"} value="nutrition"></input>
-            <label htmlFor="nutrition">Nutritional Wellness</label>
-
-            <input type="radio"  id="mental" onChange={handleClick} checked={reminderType === "Mental Wellness"} value="mental"></input>
-            <label htmlFor="mental">Mental Wellness</label>
-
+            <div>
+            <input type="radio"  id="physical" onChange={handleClick} checked={reminderType === "Physical"} value="Physical"/>Physical
+            {/* <label htmlFor="physical">Physical</label> */}
+            </div>
+            <div>
+            <input type="radio" id="nutrition" onChange={handleClick} checked={reminderType === "Nutrition"} value="Nutrition"/>Nutritional
+            {/* <label htmlFor="nutrition">Nutritional</label> */}
+            </div>
+            <div>
+            <input type="radio"  id="mental" onChange={handleClick} checked={reminderType === "Self-Care"} value="Self-Care"/>Self-Care
+            {/* <label htmlFor="mental">Mental</label> */}
+            </div>
+            {
+            filteredBells = bells.filter(bell=> bell.type === reminderType)
+       }
+        {console.log(filteredBells)}
         <button  type="reset"
           onClick={resetRadioState}>RESET</button>
             <p>{reminderType}</p>
@@ -43,4 +62,3 @@ const resetRadioState = () => {
   )
 }
 
-export default UserIntakeForm

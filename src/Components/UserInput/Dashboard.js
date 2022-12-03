@@ -1,10 +1,12 @@
 import React from 'react'
+import 
 
-export default function Dashboard() {
+export default function Dashboard({reminderType}) {
+  console.log(reminderType)
 
   return (
     <div>
-        <div>
+      <div>
             <h2>Well Bells</h2>
             <h3>Your reminder type:</h3>
             <img alt='Physical' height='150' width='150'  src='https://cdn-icons-png.flaticon.com/512/2917/2917805.png'/>

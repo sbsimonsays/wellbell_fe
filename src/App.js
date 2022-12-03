@@ -11,7 +11,7 @@ import SetReminders from './Pages/SetReminders';
 import Protected from './Components/Protected';
 import { AuthContextProvider } from './context/AuthContext';
 import FourOFour from './Pages/FourOFour';
-import HomePage from './Components/Home/HomePage';
+import Home from './Pages/Home';
 import LoginPage from './Components/Login/ExistingUserLogin';
 
 // import messaging  from "../src/Firebase/firebase-messaging-sw";
@@ -25,7 +25,7 @@ function App() {
         {/* <SideNav /> */}
      
         <Routes>
-          <Route path="/" element={<HomePage/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/rewards" element={<Rewards/>}/>
