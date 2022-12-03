@@ -3,7 +3,7 @@ import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import {Link} from 'react-router-dom'
-import SideNav from "./SideNav";
+import SideNav from "../SideNav";
 
 function ExistingUserLogin() {
   const { googleSignIn, user } = UserAuth();
@@ -49,7 +49,7 @@ function ExistingUserLogin() {
           <br/>
           <br/>
 {/* - Where does Get started button GO?????????????????????????????????????????????? */}
-          <Link to='/currentReminders'>
+          <Link to='/useraccount'>
             <button>Submit</button>
           </Link>
         </form>
