@@ -13,7 +13,7 @@ Having reminders to incorporate movement, having a snack or just close their eye
 
 </p>
     </section>  
-    
+    {/* - add our images and linkeIn links  */}
     </div>
   )
 }
