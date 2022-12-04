@@ -12,8 +12,22 @@
     color:#6ce5e8;
     font-size: 60px;
     cursor: pointer;
+    padding: 25px;
 }
+
+.dash-icon-info{
+    color:#6ce5e8;
+    font-size: 60px;
+    cursor: pointer;
+    margin-top: 150px;
+}
+
 .user-dash-greeting {
     color: white;
     font-family:'DM Sans', sans-serif;
+    margin-bottom: 35px;
+}
+
+.logo{
+    margin-bottom: -30px;
 }
