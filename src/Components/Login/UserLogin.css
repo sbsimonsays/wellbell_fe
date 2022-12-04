@@ -1,0 +1,100 @@
+.login-main{
+    width: 100vw;
+    height: 100vh;
+    background-color:#e7dfd8 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10vh 10vw 15vh 10vw;
+}
+
+.login-left{
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.login-right{
+    width: 50%;
+
+}
+
+.login-right img{
+    width: 100%;
+
+}
+.login-right{
+    background-image: url("../../public/WomanWithFlowers.jpg");
+    height: 100%;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20%;
+}
+
+.login-form h2{
+    text-align: center;
+    color: #03989e;
+    font-family: 'Livvic', sans-serif;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.login-form button{
+    font-family:'B612', sans-serif;
+    border: 1px black solid;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0px;
+    min-width: 150px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    
+}
+
+.login-form button:hover{
+    background-color: rgba(255, 255, 255, 0.505);
+    transition: 0.3s;
+}
+
+.login-form input {
+    border-radius: 5px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.login-form input::placeholder {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.form-item-wrapper{
+    padding: 0 10%;
+    width: 100%;
+
+}
+
+.form-button-wrapper{
+    padding: 0 15%;
+    width: 100%;
+}
+
