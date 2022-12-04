@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../Components/HomePage.css";
 import logo from  "../public/wellbell.png"
+import {useNavigate} from "react-router-dom"
 
 function HomePage() {
+  const navigate = useNavigate()
   return (
     <div className="main-display">
       <div className="main-left">
@@ -19,8 +21,8 @@ function HomePage() {
           your daily grind and reconnect with your wellbeing
         </h3>
         <div className="home-buttons">
-          <button>Get Started</button>
-          <button>Login</button>
+          <button onClick={()=>navigate("/signup")}>Get Started</button>
+          <button onClick={()=>navigate("/login")}>Login</button>
         </div>
         </div>
 

@@ -15,6 +15,7 @@ import FourOFour from './Pages/FourOFour';
 import Home from './Pages/Home';
 import LoginPage from './Components/Login/ExistingUserLogin';
 import UserLogin from './Components/Login/UserLogin';
+import SignUp from './Components/Login/SignUp';
 // import messaging  from "../src/Firebase/firebase-messaging-sw";
 
 
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<UserLogin/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/rewards" element={<Rewards/>}/>
           <Route path="/setreminder" element={<SetReminders/>}/>

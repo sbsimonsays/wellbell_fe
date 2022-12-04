@@ -1,4 +1,4 @@
-.login-main{
+.signup-main{
     width: 100vw;
     height: 100vh;
     background-color:#e7dfd8 ;
@@ -7,7 +7,7 @@
     justify-content: space-between;
 }
 
-.login-wrapper{
+.signup-wrapper{
     width: 100%;
     height: 100%;
     display: flex;
@@ -16,7 +16,7 @@
     padding: 10vh 10vw 15vh 10vw;
 }
 
-.login-left{
+.signup-right{
     width: 50%;
     height: 100%;
     justify-content: center;
@@ -24,38 +24,38 @@
     display: flex;
     flex-direction: column;
 }
-.login-right{
+.signup-left{
     width: 50%;
 
 }
 
-.login-right img{
+.signup-left img{
     width: 100%;
 
 }
-.login-right{
-    background-image: url("../../public/WomanWithFlowers.jpg");
+.signup-left{
+    background-image: url("../../public/mountain.jpg");
     height: 100%;
     width: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-.login-form{
+.signup-form{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 0 20%;
 }
 
-.login-form h2{
+.signup-form h2{
     text-align: center;
     color: #03989e;
     font-family: 'Livvic', sans-serif;
     font-size: 35px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
-.login-form button{
+.signup-form button{
     font-family:'B612', sans-serif;
     border: 1px black solid;
     border-radius: 25px;
@@ -70,24 +70,24 @@
     
 }
 
-.login-form button:hover{
+.signup-form button:hover{
     background-color: rgba(255, 255, 255, 0.505);
     transition: 0.3s;
 }
 
-.login-form input {
+.signup-form input {
     border-radius: 5px;
     padding-left: 20px;
     margin-bottom: 25px;
 }
 
-.login-form input::placeholder {
+.signup-form input::placeholder {
     font-family: 'DM Sans', sans-serif;
     font-size: 11px;
     font-weight: bold;
 }
 
-.form-item-wrapper{
+.signup-item-wrapper{
     padding: 0 10%;
     width: 100%;
 
@@ -98,3 +98,43 @@
     width: 100%;
 }
 
+.double-button-wrapper{
+  display: flex;
+    width: 100%;
+    padding: 0 15%;
+    justify-content: center;
+}
+.double-button-wrapper button:first-of-type{
+    margin-right: 25px;
+}
+
+.nav-dots{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.nav-dots div:first-of-type{
+    margin-right: 10px;
+}
+
+.dot-one{
+    height: 8px;
+    width: 8px;
+    border-radius: 100px;
+    background-color:  rgba(255, 255, 255, 0.7);
+
+}
+.dot-two{
+    height: 8px;
+    width: 8px;
+    border-radius: 100px;
+    background-color:  rgba(255, 255, 255, 0.4);
+    
+}
+.signup-info{
+    width: 100%;
+    padding: 0 10%;
+    text-align: center;
+    margin-bottom: 20px;
+}
