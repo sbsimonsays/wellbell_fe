@@ -1,5 +1,5 @@
 import React from 'react';
-import Dashboard from '../Components/UserInput/Dashboard';
+import Dashboard from '../Components/Dashboard/Dashboard';
 import SideNav from '../Components/SideNav';
 import { UserAuth } from '../context/AuthContext';
 

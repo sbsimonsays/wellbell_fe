@@ -1,0 +1,11 @@
+.rewards-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.rewards-main{
+    width: 100%;
+    background-color: #e7dfd8;
+    
+}
