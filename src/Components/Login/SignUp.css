@@ -138,3 +138,26 @@
     text-align: center;
     margin-bottom: 20px;
 }
+
+.signup-checkboxes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-checkboxes-two{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-checkboxes div{
+    display: flex;
+    align-items: center;
+}
+
+.signup-checkboxes-two div{
+    display: flex;
+    align-items: center;
+
+}
