@@ -15,11 +15,11 @@ export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const auth = getAuth();
   const createUser = (user) => {
-    console.log(user);
+    // console.log(user);
     const { email, password } = user;
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
+        // console.log(userCredential);
         // setUser(userCredential.user);
         // ...
       })
@@ -30,11 +30,12 @@ export const AuthContextProvider = ({ children }) => {
       });
   };
 
-
  const signIn =(user) => {
+  // console.log(user)
   const { email, password } = user;
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      // console.log(userCredential);
       // Signed in 
       const user = userCredential.user;
       // ...
@@ -44,6 +45,7 @@ export const AuthContextProvider = ({ children }) => {
       const errorMessage = error.message;
     });
   }
+
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     // signInWithPopup(auth, provider);
@@ -56,6 +58,7 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
+      console.log("auth changed!", user)
       if (user) {
         // if onAuthStateChanged emits a user - set it state
         const { email, displayName, photoURL, uid } = user;
@@ -64,15 +67,7 @@ export const AuthContextProvider = ({ children }) => {
         setUser(null);
       }
     });
-    // const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-    //   setUser(currentUser);
-    //   //backend can key into uid from current user
-    //   console.log('User', currentUser)
-    // });
-    // return () => {
-    //   unsubscribe();
-    // };
-  }, []);
+  }, [user]);
 
   return (
     <AuthContext.Provider value={{ createUser, signIn, logOut, user }}>
@@ -84,32 +79,3 @@ export const AuthContextProvider = ({ children }) => {
 export const UserAuth = () => {
   return useContext(AuthContext);
 };
-
-// -from notes
-
-// import React, { useEffect, useState, createContext } from "react";
-// import { auth } from "../Firebase/firebase";
-
-// // create context and initialize with null
-// export const UserContext = createContext(null);
-
-// export const UserProvider = (props) => {
-//   const [user, setUser] = useState(null);
-
-//   useEffect(() => {
-//     auth.onAuthStateChanged((user) => {
-//       if (user) {
-//         const { email, displayName, photoURL, uid } = user;
-//         setUser({ email, displayName, photoURL, uid });
-//       } else {
-//         setUser(null);
-//       }
-//     });
-//   }, []);
-
-//   return (
-//     <UserContext.Provider value={user}>
-//       <div>{props.children}</div>
-//     </UserContext.Provider>
-//   );
-// };

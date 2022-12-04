@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import NavLogo from '../Shared/NavLogo'
 import "./UserLogin.css"
 import womanWithFlowers from "../../public/WomanWithFlowers.jpg"
+import {AuthContext} from "../../context/AuthContext"
+import { useNavigate } from 'react-router-dom'
+
+
 function UserLogin() {
-  
+  const [ existingUser, setExistingUser ] = useState({
+    username:"user123",
+    email:"user123@pursuit.org",
+    password: "ladida",
+    ppoints:0,
+    npoints:0,
+    scpoints:0
+  })
+  const { signIn, user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSubmit =() => {
+    signIn(existingUser);
+  }
+  useEffect(()=>{
+    if(user){
+      navigate("/dashboard");
+    }
+  },[user])
+
   return (
+
     <div className='login-main'>
         <NavLogo />
         <div className='login-wrapper'>
@@ -16,7 +40,7 @@ function UserLogin() {
               <input placeholder="Username" type="text"/>
               <input placeholder="Password"  type="password"/>
               <div className='form-button-wrapper'>
-              <button>Sign In</button>
+              <button onClick={(e) => {e.preventDefault(); handleSubmit()}}>Sign In</button>
               </div>
             </form>
           </div>
@@ -29,3 +53,5 @@ function UserLogin() {
 }
 
 export default UserLogin
+
+//if theres a user, navigate to dashboard
