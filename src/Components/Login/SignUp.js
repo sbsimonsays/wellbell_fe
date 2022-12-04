@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import NavLogo from "../Shared/NavLogo";
 import "./SignUp.css";
+import {AuthContext} from "../../context/AuthContext"
 function SignUp() {
   const [formPage, setFormPage] = useState(true);
   const [newUser, setNewUser] = useState({
-    username:"",
-    email:"",
+    username:"jedeBb",
+    email:"jedebrahma55@pursuit.org",
+    password: "ladida",
     ppoints:0,
     npoints:0,
     scpoints:0
   })
+  const {createUser} = useContext(AuthContext)
+  const handleSubmit =() => {
+    createUser(newUser) 
+  }
 
   return (
     <div className="signup-main">
@@ -62,7 +68,7 @@ function SignUp() {
                 </div>
                 <div className="double-button-wrapper">
                   <button onClick={(e) => {e.preventDefault();setFormPage(true)}}>Go Back</button>
-                  <button>Get Started</button>
+                  <button onClick={(e) => {e.preventDefault(); handleSubmit()}}>Get Started</button>
                 </div>
                 <div className="nav-dots">
                   <div className="dot-two" />
