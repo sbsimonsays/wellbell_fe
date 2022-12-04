@@ -41,7 +41,25 @@ function SignUp() {
                 </div>
                 <span className="signup-info">Select a username</span>
                 <input placeholder="Username" type="text" />
-                <div className="signup-checkboxes"></div>
+                <span className="signup-info">Select the types of reminders you wish to receive</span>
+                
+
+                <div className="signup-checkboxes">
+                  <div>
+                  <input type="checkbox" name="physical"/>
+                  <label for="physical">Physical Wellness</label>
+                  </div>
+                  <div>
+                  <input type="checkbox" name="nutritional"/>
+                  <label for="nutritional">Nutritional Wellness</label>
+                  </div>
+                </div>
+                <div className="signup-checkboxes-two">
+                  <div>
+                  <input type="checkbox" name="mental"/>
+                  <label for="mental">Mental Wellness</label>
+                  </div>
+                </div>
                 <div className="double-button-wrapper">
                   <button onClick={(e) => {e.preventDefault();setFormPage(true)}}>Go Back</button>
                   <button>Get Started</button>
