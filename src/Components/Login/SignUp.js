@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom"
 function SignUp() {
   const [formPage, setFormPage] = useState(true);
   const [newUser, setNewUser] = useState({
-    username:"",
-    email:"",
-    password: "",
-    ppoints:0,
-    npoints:0,
-    scpoints:0
+    username:"user1234",
+    email:"user1243@gmail.com",
+    password: "ladida",
+    firstName:"",
+    lastName: "", 
+    
   })
 
   

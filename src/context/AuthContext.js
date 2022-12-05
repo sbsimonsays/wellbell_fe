@@ -17,8 +17,14 @@ export const AuthContextProvider = ({ children }) => {
   const createUser = (user) => {
     // console.log(user);
     const { email, password } = user;
+    
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+          //**** */
+          // POSSIBLE RACE CONDITION HERE WITH FIREBASE AUTH SIGNING IN BEFORE THE USER INFO SAVED
+        // after we sign a user  UP we need to POST the users sign up info
+        // to our DB 
+        //**** */
         // console.log(userCredential);
         // setUser(userCredential.user);
         // ...
@@ -45,6 +51,8 @@ export const AuthContextProvider = ({ children }) => {
       const errorMessage = error.message;
     });
   }
+//query db and save to context somehow^^^^
+//could also be done within useEffect
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -60,15 +68,20 @@ export const AuthContextProvider = ({ children }) => {
     auth.onAuthStateChanged((user) => {
       console.log("auth changed!", user)
       if (user) {
+        //***** */
+        // WHEN WE GET A USER FROM FIREBASE WE HAVE A UID TO QUERY OUR DB
+        // fire a query to your backend => get the users preferences => 
+        // then setUser with that value  && the current values we are passing
         // if onAuthStateChanged emits a user - set it state
+        //***** */
         const { email, displayName, photoURL, uid } = user;
         setUser({ email, displayName, photoURL, uid });
       } else {
         setUser(null);
       }
     });
-  }, [user]);
-
+  }, []);
+//if theres a user --> query db????? and spread info into useState
   return (
     <AuthContext.Provider value={{ createUser, signIn, logOut, user }}>
       {children}
