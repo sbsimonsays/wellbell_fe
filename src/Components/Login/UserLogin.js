@@ -4,24 +4,40 @@ import "./UserLogin.css"
 import womanWithFlowers from "../../public/WomanWithFlowers.jpg"
 import {AuthContext} from "../../context/AuthContext"
 import { useNavigate } from 'react-router-dom'
+// import axios from "axios";
+// const API = process.env.REACT_APP_API_URL
 
 
 function UserLogin() {
   const [ existingUser, setExistingUser ] = useState({
-    username:"user123",
-    email:"user123@pursuit.org",
-    password: "ladida",
-    ppoints:0,
-    npoints:0,
-    scpoints:0
+    email:"", 
+     username:"", 
+     password:"",
+     firstname:"", 
+     lastname:"", 
+     physicalpoints:0, 
+     nutritionalpoints:0, 
+     selfcarepoints:0, 
+     physicalpreferences:"",
+    nutritionalpreferences:"", 
+    mentalpreferences:""
   })
   const { signIn, user } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  // const getUser = () => {
+  //   axios
+  //   .get(`${API}/users/${uid}`)
+  //   .then(res => setExistingUser(res.data.payload))
+  // }
+  const handleTextChange = (e) => {
+    setExistingUser({...existingUser, [e.target.id]: e.target.value})
+     }
   const handleSubmit =() => {
     signIn(existingUser);
+    // getUser();
   }
   useEffect(()=>{
+    // setExistingUser(user);
     if(user){
       navigate("/dashboard");
     }
@@ -37,8 +53,8 @@ function UserLogin() {
               <div className='form-item-wrapper'>
               <h2>Login to WellBell</h2>
               </div>
-              <input placeholder="Username" type="text"/>
-              <input placeholder="Password"  type="password"/>
+              <input onChange={handleTextChange} id="email" value={existingUser.email} required placeholder="Email" type="text" />
+              <input onChange={handleTextChange} id="password" value={existingUser.password} placeholder="Password"  type="password"/>
               <div className='form-button-wrapper'>
               <button onClick={(e) => {e.preventDefault(); handleSubmit()}}>Sign In</button>
               </div>
