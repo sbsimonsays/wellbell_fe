@@ -12,7 +12,7 @@ function Profile() {
       <DashNav />
       <div className="profile-main">
         <div className="profile-title">
-          <h1>User Profile</h1>
+          <h1>User's Profile</h1>
         </div>
         <div className="user-info">
           <div className="user-profile-left">
