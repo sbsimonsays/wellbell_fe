@@ -1,18 +1,18 @@
-import React from 'react'
-import DashNav from './DashNav'
+import React from "react";
+import DashNav from "../Dashboard/DashNav";
+import RewardsComp from "../Rewards/RewardsComp";
 
-import "./Rewards.css"
+import "./Rewards.css";
 
 function Rewards() {
   return (
-
-    <div className='rewards-page'>
-      <DashNav />
-      <div className='rewards-main'>
-        <h1>Rewards List</h1>
+    <div className="rewards-page">
+      {/* <DashNav /> */}
+      <div className="rewards-main">
+        <RewardsComp />
       </div>
     </div>
-  )
+  );
 }
 
-export default Rewards
+export default Rewards;

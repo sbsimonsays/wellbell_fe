@@ -1,36 +1,57 @@
-import React from 'react';
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Header() {
-    const navigate = useNavigate();
-    const location = useLocation();
-    console.log(location.pathname)
-    function pathMatchRoute(route) {
-        if(route === location.pathname){
-            return true;
-        }
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.pathname);
+  function pathMatchRoute(route) {
+    if (route === location.pathname) {
+      return true;
     }
+  }
   return (
     <div className="bg-orange-50 border-b shadow-sm sticky top-0 z-50">
-        <header className="flex justify-between items-center px-3 max-w-6xl mx-auto">
-            <div>
-                <img src="../wellbell-teal.png" 
-                alt="wellbelllogo" 
-                className='h-20 cursor-pointer'
-                onClick={() => navigate("/")}
-                 />
-            </div>
-            <div>
-                <ul className='flex space-x-10'>
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-teal-500 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-teal-800 border-b-orange-600"}`}
-                    onClick={() => navigate("/")}>Home</li>
+      <header className="flex justify-between items-center px-3 max-w-6xl mx-auto">
+        <div>
+          <img
+            src="../wellbell-teal.png"
+            alt="wellbelllogo"
+            className="h-20 cursor-pointer"
+            onClick={() => navigate("/")}
+          />
+        </div>
+        <div>
+          <ul className="flex space-x-10">
+            <li
+              className={`cursor-pointer py-3 text-sm font-semibold text-teal-500 border-b-[3px] border-b-transparent ${
+                pathMatchRoute("/") && "text-teal-800 border-b-orange-600"
+              }`}
+              onClick={() => navigate("/")}
+            >
+              Home
+            </li>
 
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/about") && "text-teal-800 border-b-orange-600"}`} onClick={() => navigate("/about")}>Our Team</li>
+            <li
+              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
+                pathMatchRoute("/about") && "text-teal-800 border-b-orange-600"
+              }`}
+              onClick={() => navigate("/about")}
+            >
+              Our Team
+            </li>
 
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/login") && "text-teal-800 border-b-orange-600"}`} onClick={() => navigate("/login")}>Sign in</li>
-                </ul>
-            </div>
-        </header>
+            <li
+              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
+                pathMatchRoute("/login") && "text-teal-800 border-b-orange-600"
+              }`}
+              onClick={() => navigate("/login")}
+            >
+              Sign in
+            </li>
+          </ul>
+        </div>
+      </header>
     </div>
-  )
+  );
 }

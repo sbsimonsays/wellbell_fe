@@ -1,10 +1,12 @@
-import React from 'react';
-import AboutUs from '../Components/AboutUs';
+import React from "react";
+import AboutUs from "../Components/AboutUs";
 
 function About() {
   return (
-    <div><AboutUs /></div>
-  )
+    <div>
+      <AboutUs />
+    </div>
+  );
 }
 
 export default About;
