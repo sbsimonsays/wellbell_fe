@@ -1,21 +1,32 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import NavLogo from "../Shared/NavLogo";
 import "./SignUp.css";
 import {AuthContext} from "../../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 function SignUp() {
   const [formPage, setFormPage] = useState(true);
   const [newUser, setNewUser] = useState({
-    username:"jedeBb",
-    email:"jedebrahma55@pursuit.org",
-    password: "ladida",
+    username:"",
+    email:"",
+    password: "",
     ppoints:0,
     npoints:0,
     scpoints:0
   })
-  const {createUser} = useContext(AuthContext)
+
+  
+  const {createUser, user} = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const handleSubmit =() => {
     createUser(newUser) 
   }
+  useEffect(()=>{
+    if(user){
+    navigate("/dashboard") 
+    }
+
+  },[user])
 
   return (
     <div className="signup-main">
@@ -84,3 +95,6 @@ function SignUp() {
 }
 
 export default SignUp;
+
+
+//if theres a user navigate to dashboard
