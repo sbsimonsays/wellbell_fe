@@ -10,6 +10,7 @@ function SignUp() {
   const [newUser, setNewUser] = useState({
      email:"", 
      username:"", 
+     password:"",
      firstname:"", 
      lastname:"", 
      physicalpoints:0, 
@@ -27,7 +28,7 @@ function SignUp() {
 
   
   const handleTextChange = (e) => {
-   setNewUser({...newUser, [e.target.id]: e.target.value})
+ setNewUser({...newUser, [e.target.id]: e.target.value})
   }
   const addUser = (newUser) => {
     axios
@@ -56,6 +57,9 @@ function SignUp() {
         <div className="signup-left" />
         <div className="signup-right">
           <form className="signup-form">
+            {newUser.email ? newUser.email : "no user"}
+            {newUser.password ? newUser.password : "no pword"}
+            {newUser.username ? newUser.username : "no username"}
             {formPage ? (
               <>
                 <div className="signup-item-wrapper">
@@ -79,7 +83,7 @@ function SignUp() {
                   <h2>Create A Wellness Profile</h2>
                 </div>
                 <span className="signup-info">Select a username</span>
-                <input placeholder="Username" type="text" />
+                <input onChange= {handleTextChange} id="username" value={newUser.username} placeholder="CRAZY!!" type="text" />
                 <span className="signup-info">Select the types of reminders you wish to receive</span>
                 
 
