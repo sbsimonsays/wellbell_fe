@@ -15,7 +15,7 @@ export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const auth = getAuth();
   const createUser = (user) => {
-    // console.log(user);
+    console.log(user);
     const { email, password } = user;
     
     createUserWithEmailAndPassword(auth, email, password)
@@ -41,7 +41,7 @@ export const AuthContextProvider = ({ children }) => {
   const { email, password } = user;
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // console.log(userCredential);
+      console.log(userCredential);
       // Signed in 
       const user = userCredential.user;
       // ...
@@ -66,7 +66,7 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      console.log("auth changed!", user)
+      // console.log("auth changed!", user)
       if (user) {
         //***** */
         // WHEN WE GET A USER FROM FIREBASE WE HAVE A UID TO QUERY OUR DB
