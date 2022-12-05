@@ -9,3 +9,149 @@
     background-color: #e7dfd8;
     
 }
+.bells-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.bells-title h1 {
+    font-family: 'Livvic', sans-serif;
+    text-align: center;
+    color: #03989e;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 100px;
+}
+
+.recent-bells{
+    width: 100%;
+    display: flex;
+    height: 100%;
+}
+
+.bells-left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bells-right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-bell-left-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+.single-bell-left-one{
+    height: 140px;
+    width: 550px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.355);
+    margin: 20px;
+
+}
+
+.single-bell-left-one-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.type-image{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.type-image img {
+    height: 100px;
+    margin-right: 400px;
+    margin-top: 15px;
+}
+
+.type-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -110px;
+
+}
+
+.type-text h6{
+    margin-left:400px; 
+    font-family: 'DM', sans-serif;
+    text-align: center;
+    font-weight: 500;
+}
+
+.type-text h2{
+    font-family: 'DM', sans-serif;
+    text-align: center;
+    font-weight: 500;
+}
+.type-text h4{
+    font-family: 'DM', sans-serif;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.single-bell-left-two{
+    height: 140px;
+    width: 550px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.355);
+    margin: 20px;
+    margin-left: 125px;
+}
+.single-bell-left-three{
+    height: 140px;
+    width: 550px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.355);
+    margin: 20px;
+}
+
+.single-bell-right-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+.single-bell-right-one{
+    height: 140px;
+    width: 550px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.355);
+    margin: 20px;
+}
+.single-bell-right-two{
+    height: 140px;
+    width: 550px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.355);
+    margin: 20px;
+    margin-left: 125px;
+}
+.single-bell-right-three{
+    height: 140px;
+    width: 550px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.355);
+    margin: 20px;
+}
