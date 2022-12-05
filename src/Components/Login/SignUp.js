@@ -2,15 +2,22 @@ import React, { useState, useContext, useEffect } from "react";
 import NavLogo from "../Shared/NavLogo";
 import "./SignUp.css";
 import {AuthContext} from "../../context/AuthContext"
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+const API = process.env.REACT_APP_API_URL
 function SignUp() {
   const [formPage, setFormPage] = useState(true);
   const [newUser, setNewUser] = useState({
-    username:"user1234",
-    email:"user1243@gmail.com",
-    password: "ladida",
-    firstName:"",
-    lastName: "", 
+     email:"", 
+     username:"", 
+     firstname:"", 
+     lastname:"", 
+     physicalpoints:0, 
+     nutritionalpoints:0, 
+     selfcarepoints:0, 
+     physicalpreferences:"",
+    nutritionalpreferences:"", 
+    mentalpreferences:""
     
   })
 
@@ -18,15 +25,29 @@ function SignUp() {
   const {createUser, user} = useContext(AuthContext);
   const navigate = useNavigate();
 
+  
+  const handleTextChange = (e) => {
+   setNewUser({...newUser, [e.target.id]: e.target.value})
+  }
+  const addUser = (newUser) => {
+    axios
+    .post(`${API}/users`, newUser)
+    .then(res => setNewUser(res.payload.value))
+  }
   const handleSubmit =() => {
-    createUser(newUser) 
+    addUser(newUser)
+    createUser(newUser); 
+    console.log(newUser)
+    
+    // setNewUser(newUser);
   }
   useEffect(()=>{
+    // console.log(user)
     if(user){
     navigate("/dashboard") 
     }
 
-  },[user])
+  },[])
 
   return (
     <div className="signup-main">
@@ -40,11 +61,12 @@ function SignUp() {
                 <div className="signup-item-wrapper">
                   <h2>Sign Up for WellBell</h2>
                 </div>
-                <input placeholder="Email" type="text" />
-                <input placeholder="Password" type="password" />
-                <input placeholder="Re-Enter Password" type="password" />
+                <input onChange= {handleTextChange} id= "email" value={newUser.email} placeholder="Email" type="text" />
+                <input onChange= {handleTextChange} id= "password" value={newUser.password}placeholder="Password" type="password" />
+                {/* <input id= "re-password" placeholder="Re-Enter Password" type="password" /> */}
                 <div className="form-button-wrapper">
-                  <button onClick={(e) => {e.preventDefault();setFormPage(false)}}>Next</button>
+                  <button 
+                  onClick={(e) => {e.preventDefault();setFormPage(false)}}>Next</button>
                 </div>
                 <div className="nav-dots">
                   <div className="dot-one" />
@@ -64,17 +86,17 @@ function SignUp() {
                 <div className="signup-checkboxes">
                   <div>
                   <input type="checkbox" name="physical"/>
-                  <label for="physical">Physical Wellness</label>
+                  <label htmlFor="physical">Physical Wellness</label>
                   </div>
                   <div>
                   <input type="checkbox" name="nutritional"/>
-                  <label for="nutritional">Nutritional Wellness</label>
+                  <label htmlFor="nutritional">Nutritional Wellness</label>
                   </div>
                 </div>
                 <div className="signup-checkboxes-two">
                   <div>
                   <input type="checkbox" name="mental"/>
-                  <label for="mental">Mental Wellness</label>
+                  <label htmlFor="mental">Mental Wellness</label>
                   </div>
                 </div>
                 <div className="double-button-wrapper">
