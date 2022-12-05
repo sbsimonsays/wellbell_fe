@@ -10,15 +10,16 @@ import DashNav from './DashNav'
 import "./Dashboard.css"
 
 function Dashboard() {
-  const {user} = useContext(AuthContext);
-  const navigate = useNavigate()
+  // const {user} = useContext(AuthContext);
+  // const navigate = useNavigate()
   
-  useEffect(()=>{
-    if(!user){
-      navigate("/login")
-    }
+  // useEffect(()=>{
+  //   if(!user){
+  //     navigate("/login")
+  //   }
 
-  },[user])
+  // },[user])
+
   return (
     <div className='dashboard'>
       <DashNav />

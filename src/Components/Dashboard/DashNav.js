@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useEffect, useContext} from 'react'
 import "./DashNav.css"
 import logo from "../../public/wellbell.png"
 import { useNavigate } from "react-router-dom"
+import {AuthContext} from "../../context/AuthContext"
+
 
 
 
 function DashNav() {
-  const navigate =  useNavigate() 
+
+  const { logOut, user } = useContext(AuthContext);
+  const navigate =  useNavigate();
+
+  useEffect(()=>{
+    if(!user){
+      navigate("/login")
+    }
+
+  },[user]) 
   return (
     <div className='dash-nav-main'>
 
@@ -16,6 +27,7 @@ function DashNav() {
     <i onClick={()=>navigate("/dashboard/bells")} className="dash-icon fa-regular fa-bell"></i>
     <i onClick={()=>navigate("/dashboard/rewards")} className="dash-icon fa-solid fa-award"></i>
     <i onClick={()=>navigate("/about")} className="dash-icon-info fa-solid fa-circle-info"></i>
+    <button onClick={logOut} className="dash-icon-logOut">LogOut</button>
     </div>
   )
 }
