@@ -4,7 +4,9 @@ import "./SignUp.css";
 import {AuthContext} from "../../context/AuthContext"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 const API = process.env.REACT_APP_API_URL
+
 function SignUp() {
   const [formPage, setFormPage] = useState(true);
   const [newUser, setNewUser] = useState({
