@@ -36,7 +36,7 @@ export const AuthContextProvider = ({ children }) => {
       });
   };
 
- const signIn =(user) => {
+ const signIn = async (user) => {
   // console.log(user)
   const { email, password } = user;
   signInWithEmailAndPassword(auth, email, password)
@@ -80,12 +80,14 @@ export const AuthContextProvider = ({ children }) => {
         setUser(null);
       }
     });
-  }, []);
+  }, [])
+  console.log(user);
 //if theres a user --> query db????? and spread info into useState
   return (
     <AuthContext.Provider value={{ createUser, signIn, logOut, user }}>
       {children}
     </AuthContext.Provider>
+
   );
 };
 

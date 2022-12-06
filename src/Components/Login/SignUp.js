@@ -19,7 +19,6 @@ function SignUp() {
      physicalpreferences:"",
     nutritionalpreferences:"", 
     mentalpreferences:""
-    
   })
 
   
