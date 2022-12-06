@@ -28,6 +28,40 @@ export const AuthContextProvider = ({ children }) => {
         // console.log(userCredential);
         // setUser(userCredential.user);
         // ...
+
+// COMPONENT -> AUTHCONTEXTPROVIDER -> INFO VIA USESTATE
+
+// GETTING ALL INFO FROM FIREBASE -> USESTATE USEEFFECT functions
+
+// FIREBASE-> GET TOKEN GET MESSAGING onMESSAGE
+
+// Authentication -> grabbing getAuth data
+
+// Export auth -> get authentication with app (initialized with firebaseConfig authentication)
+
+// App -> If we want authentication -> Save to a variable with (app) -> Similar to message
+
+// Firing getAuth = connecting us to the instance of useState
+
+// Pass entire user object
+
+// Grab email and password from back-end -> Create user with email and password = function needs email with auth ->
+
+// Pass on email and password to firebase -> records username = if authenticated, will sign them in 
+
+// AuthContext.js:22 -> axios .post (once we get user id) -> send it towards users backend table
+
+// onAuthStateChanged -> continuously listens
+// If state of user changes, callback function will fire automatically (firebase is listening) -> go into callback
+
+// If (user) update state with all info from firebase -> axios .post request alongside “sign up”
+
+// else setState to null
+
+// User from firebase -> setUser provides context -> AuthContext value = user with {signIn, logOut} = either null and 
+
+// Anytime communicating with google -> fire auth variable
+
       })
       .catch((error) => {
         const errorCode = error.code;

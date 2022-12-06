@@ -40,9 +40,11 @@ function App() {
     mentalpreferences: "",
     image: "",
   });
+
 // Give existingUser as a prop
 // Take the data, define inside of AuthContext, pass in auth provider, existinguser, set existing user -> use authcontext to obtain existinguser
 // Do for signup component -> simple post request instead of .get -> same process as before -> create user in database 
+
   return (
     <AuthContextProvider>
       <Router>
