@@ -16,7 +16,7 @@ function DashNav() {
   return (
     <div className="dash-nav-main">
       <img onClick={() => navigate("/dashboard")} src={logo} className="logo" />
-      <span className="user-dash-greeting">Welcome User!</span>
+      <span className="user-dash-greeting">Welcome {user.email}!</span>
       <i
         onClick={() => navigate("/dashboard")}
         className="dash-icon fa-solid fa-house"
