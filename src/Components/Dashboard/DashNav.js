@@ -30,7 +30,7 @@ function DashNav() {
         className="dash-icon fa-solid fa-award"
       ></i>
       <i
-        onClick={() => navigate("/about")}
+        onClick={() => navigate("/dashboard/about")}
         className="dash-icon-info fa-solid fa-circle-info"
       ></i>
       <i onClick={logOut} className="dash-icon fa fa-sign-out" aria-hidden="true"></i>

@@ -37,9 +37,26 @@
 
 .progress-bars{
     width: 100%;
-    height: 55%;
+    display: flex;
+    flex-direction: row;
+    padding: 35px;
+}
+.physical-progress{
     display: flex;
     flex: 1;
+    margin-right: 50px;
+}
+
+.nutritional-progress{
+    display: flex;
+    flex: 1;
+    margin-right: 50px;
+}
+
+.self-care-progress{
+    display: flex;
+    flex: 1;
+
 }
 
 .partners{
@@ -79,7 +96,7 @@
 
 .partner-logo{
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     padding: 5px;
 }

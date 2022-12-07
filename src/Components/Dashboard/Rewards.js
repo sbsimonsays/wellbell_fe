@@ -6,10 +6,11 @@ import planetfitness from "../../public/planetfitness.png"
 import sephora from "../../public/sephora.jpeg"
 import smartwater from "../../public/smartwater.webp"
 import wholefoods from "../../public/wholefoods.png"
-
+import ProgressBar from './ProgressBar'
 import "./Rewards.css"
 
 function Rewards() {
+
   return (
 
     <div className='rewards-page'>
@@ -20,7 +21,15 @@ function Rewards() {
         </div>
         <div className='rewards-info'>
     <div className='progress-bars'>
-
+      <div className='physical-progress'>
+      <ProgressBar progress={50}/>
+      </div>
+      <div className='nutritional-progress'>
+      <ProgressBar progress={50}/>
+      </div>
+      <div className='self-care-progress'>
+      <ProgressBar progress={50}/>
+      </div>
     </div>
     <div  className='partners'>
       
