@@ -23,6 +23,12 @@ function UserLogin({ setExistingUser, existingUser }) {
   //   .then(res => setExistingUser(res.data.payload))
   // };
 
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+    }
+  }, [user]);
+  
   const handleTextChange = (e) => {
     setFirebaseCredentials({
       ...firebaseCredentials,

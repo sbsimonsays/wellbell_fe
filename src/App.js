@@ -61,7 +61,7 @@ function App() {
           />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/about" element={<About />} />
-          <Route path="/dashboard" element={<Profile />} />
+          <Route path="/dashboard" element={<Profile existingUser={existingUser} setExistingUser={setExistingUser}/>} />
           <Route exact path="/dashboard/bells" element={<Notifications />} />
           <Route exact path="/dashboard/rewards" element={<Rewards />} />
           {/* <Route path="/rewards" element={<Rewards/>}/> */}
@@ -83,3 +83,5 @@ function App() {
 }
 
 export default App;
+
+//DO NOT REFRESH
