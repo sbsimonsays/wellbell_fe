@@ -43,24 +43,23 @@ Arbitrator: John Prado
   </a>
   </div>
 
-
 ## Technologies
 * Languages
+    * JavaScript
+    * HTML
+    * CSS
+
+* Libraries
     * React
-    * javascript
-    * css
-
-* External Libraries
-    * ???
-    * ???
-
+    * Express
+    * Node.js
+    
 * Third Party APIs
-    * ???
-    * ???
+    * Firebase
 
 * Database
-    * PostgressSQL
-    * ??
+    * Node.js
+    * PostgreSQL
 
 ### User Stories
 * get from Kenyetta
