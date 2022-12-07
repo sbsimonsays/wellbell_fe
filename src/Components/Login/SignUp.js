@@ -8,22 +8,19 @@ const API = process.env.REACT_APP_API_URL
 function SignUp() {
   const [formPage, setFormPage] = useState(true);
   const [newUser, setNewUser] = useState({
-     email:"", 
-     username:"", 
-     password:"",
-     firstname:"", 
-     lastname:"", 
-     physicalpoints:0, 
-     nutritionalpoints:0, 
-     selfcarepoints:0, 
-     physicalpreferences:"",
-    nutritionalpreferences:"", 
-    mentalpreferences:""
-    
-  })
-
-  
-  const {createUser, user} = useContext(AuthContext);
+    email:"", 
+    username:"", 
+    password:"",
+    firstname:"", 
+    lastname:"", 
+    physicalpoints:0, 
+    nutritionalpoints:0, 
+    selfcarepoints:0, 
+    physicalpreferences: false,
+    nutritionalpreferences: false, 
+    mentalpreferences: false
+ })
+  const {createUser, user, setSignUpDetails } = useContext(AuthContext);
   const navigate = useNavigate();
 
   
@@ -36,20 +33,19 @@ function SignUp() {
     .then(res => setNewUser(res.payload.value))
   }
   const handleSubmit =() => {
-    addUser(newUser)
+    // setSignUpDetails(newUser)
     createUser(newUser);
-    navigate("/dashboard");
-    console.log(newUser)
-    
+    // navigate("/dashboard");
     // setNewUser(newUser);
   }
+
   useEffect(()=>{
     // console.log(user)
     if(user){
     navigate("/dashboard") 
     }
 
-  },[])
+  },[user])
  
 
   return (

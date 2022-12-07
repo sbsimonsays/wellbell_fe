@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import {Routes, Route, Navigate} from "react-router-dom"
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import DashNav from "./DashNav";
 import yoga from "../../public/yoga-stance.png" 
 import salad from "../../public/salad.png" 
@@ -6,7 +10,27 @@ import spa from "../../public/spa.png"
 
 import "./Profile.css";
 
+const API = process.env.REACT_APP_API_URL
+
 function Profile() {
+  const [userPreferences, setUserPreferences] = useState(null);
+  const {user} = useContext(AuthContext);
+
+  const navigate = useNavigate()
+  
+  useEffect(()=>{
+    if(!user){
+      alert("No user, re-routing to the login page!");
+      navigate("/login")
+    }else{
+      if(!userPreferences){
+        axios
+      .get(`${API}/users/${user.uid}`)
+      .then(res => setUserPreferences(res.data.payload))
+      }
+    }
+  },[user])
+
   return (
     <div className="profile-page">
       <DashNav />
