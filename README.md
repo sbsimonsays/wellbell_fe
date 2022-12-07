@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# WellBell Wellness App
+Helping you take care of you - anywhere, anytime
+WellBell is a digital application designed to help you unplug from your daily grind and reconnect with your wellbeing.
+<img src="public/wellbell-teal.png"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+Our WellBell App is for anyone Working From Home with long hours on the computer. Users set Bell reminders based on their preference of Physical, Nutritional and Mental/Self-Care. These Bells build better work habits over time, leading to a healthier, happier user and creating an optimal work life balance!
+According to the American Psychiatric Association, the majority of employees working from home have reported experiencing negative mental health impacts. WellBell is here to step in and help you take care of you with daily physical, nutritional and self care reminders!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Our Team - Our Inspiration
+Co-Leader: Spencer Simon
+<div>
+  <a href="https://www.linkedin.com/in/spencer-simon-a8024822b/">
+    <img src="src/public/Spencer Simon.png" alt="spencer"/>
+  </a>
+  </div>
+Co-Leader: Kenyetta Griffin
+<div>
+  <a href="https://www.linkedin.com/in/kenyetta-griffin-968471166/">
+    <img src="src/public/kenyettaGriffin.png" alt="kenyetta"/>
+  </a>
+  </div>
+Note Taker: Zane Ahmed
+<div>
+  <a href="https://www.linkedin.com/in/kenyetta-griffin-968471166/">
+    <img src="src/public/Zane side.png" alt="zane"/>
+  </a>
+  </div>
+Facilitator: Jede Brahma
+<div>
+  <a href="https://www.linkedin.com/in/kenyetta-griffin-968471166/">
+    <img src="src/public/JedeB.png" alt="jede"/>
+  </a>
+  </div>
+Arbitrator: John Prado
+<div>
+  <a href="https://www.linkedin.com/in/kenyetta-griffin-968471166/">
+    <img src="src/public/johnPrado.png" alt="john"/>
+  </a>
+  </div>
 
-### `npm test`
+## Technologies
+* Languages
+    * JavaScript
+    * HTML
+    * CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Libraries
+    * React
+    * Express
+    * Node.js
+    
+* Third Party APIs
+    * Firebase
 
-### `npm run build`
+* Database
+    * Node.js
+    * PostgreSQL
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### User Stories
+* get from Kenyetta
+* lorem ipsum
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Future Goals
