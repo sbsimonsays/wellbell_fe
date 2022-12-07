@@ -12,7 +12,8 @@ import "./Profile.css";
 
 const API = process.env.REACT_APP_API_URL
 
-function Profile() {
+function Profile({ existingUser, setExistingUser }) {
+
   const [userPreferences, setUserPreferences] = useState(null);
   const {user} = useContext(AuthContext);
 
@@ -23,10 +24,12 @@ function Profile() {
       alert("No user, re-routing to the login page!");
       navigate("/login")
     }else{
-      if(!userPreferences){
+      debugger
+      if(!existingUser.email){
+        debugger
         axios
       .get(`${API}/users/${user.uid}`)
-      .then(res => setUserPreferences(res.data.payload))
+      .then(res => setExistingUser(res.data.payload))
       }
     }
   },[user])
@@ -36,7 +39,7 @@ function Profile() {
       <DashNav />
       <div className="profile-main">
         <div className="profile-title">
-          <h1>User's Profile</h1>
+          <h1>{existingUser.email} Profile</h1>
         </div>
         <div className="user-info">
           <div className="user-profile-left">
