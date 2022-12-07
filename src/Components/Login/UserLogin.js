@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API = process.env.REACT_APP_API_URL
+const API = process.env.REACT_APP_API_URL;
 
 function UserLogin({ setExistingUser, existingUser }) {
   const [firebaseCredentials, setFirebaseCredentials] = useState({
@@ -32,22 +32,21 @@ function UserLogin({ setExistingUser, existingUser }) {
 
   const handleSubmit = () => {
     signIn(firebaseCredentials)
-      // .then((res) => {
-      //   return axios.get(`${API}/users/${user.uid}`);
-      // })
-      // .then((res) => { 
-      //   debugger
-      //   if (res.data?.payload?.user_id) {
-      //     setExistingUser(res.data.payload);
-      //     navigate("/dashboard");
-      //   } else {
-      //     setLoginErrors([
-      //       ...loginErrors,
-      //       "NOT ABLE TO AUTHENTICATE - TRY AGAIN",
-      //     ]);
-      //     logOut();
-      //   }
-      // });
+      .then((res) => {
+        return axios.get(`${API}/users/${user.uid}`);
+      })
+      .then((res) => {
+        if (res.data?.payload?.user_id) {
+          setExistingUser(res.data.payload);
+          navigate("/dashboard");
+        } else {
+          setLoginErrors([
+            ...loginErrors,
+            "NOT ABLE TO AUTHENTICATE - TRY AGAIN",
+          ]);
+          logOut();
+        }
+      });
     // getUser();
   };
 
@@ -94,5 +93,3 @@ function UserLogin({ setExistingUser, existingUser }) {
 }
 
 export default UserLogin;
-
-//if theres a user, navigate to dashboard
