@@ -4,7 +4,8 @@ import "./Notifications.css"
 import salad from "../../public/salad.png" 
 import yoga from "../../public/yoga-stance.png"
 import spa from "../../public/spa.png"
-
+//add list
+//add button simulates adding to ^list
 function Notifications() {
   return (
     <div className='bells-page'>
