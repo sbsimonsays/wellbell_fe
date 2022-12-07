@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Notification from './Modals/Notification';
 import SideNav from "./Components/SideNav";
 // import Login from './Pages/Login';
-import UserAccount from "./Pages/UserAccount";
-import About from "./Pages/About";
-import Header from "./Components/Header";
+import UserAccount from './Pages/UserAccount';
+import About from '../src/Components/Dashboard/About';
+import Header from './Components/Header';
 // import Rewards from './Pages/Rewards';
 import SetReminders from "./Pages/SetReminders";
 import Protected from "./Components/Protected";
@@ -60,9 +60,9 @@ function App() {
               />}
           />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<Profile />} />
           <Route exact path="/dashboard/bells" element={<Notifications />} />
+           <Route exact path="/dashboard/about" element={<About/>} />
           <Route exact path="/dashboard/rewards" element={<Rewards />} />
           {/* <Route path="/rewards" element={<Rewards/>}/> */}
           <Route path="/setreminder" element={<SetReminders />} />
