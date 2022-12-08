@@ -20,6 +20,7 @@ function Profile({ existingUser, setExistingUser }) {
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
+ 
 
   useEffect(() => {
     if (!user) {
@@ -71,22 +72,38 @@ function Profile({ existingUser, setExistingUser }) {
               </div>
             </div>
             <div className="reminder-type-blocks">
-              <h2>Your WellBell Types</h2>
+              <h2>Your WellBell Preferences</h2>
               <div className="reminder-cards">
-                <div className="reminder-physical">
+                <div
+                  id="reminder-physical"
+                  className={
+                    userPreferences.physicalpreferences === true
+                      ? "solid"
+                      : "transparent"}>
                   <h5>Physical</h5>
-                  <span>Currently Selected</span>
-                  <img alt="physical-img" src={yoga} />
+                  <img className="physical" alt="self-care-img" src={yoga} />
                 </div>
-                <div className="reminder-self-care">
+                <div
+                  id="reminder-self-care"
+                  className={
+                    userPreferences.mentalpreferences === true
+                      ? "solid"
+                      : "transparent"}>
                   <h5>Self-Care</h5>
-                  <span>Currently Selected</span>
-                  <img alt="self-care-img" src={spa} />
+                  <img className="selfcare" alt="self-care-img" src={spa} />
                 </div>
-                <div className="reminder-nutrition">
+                <div
+                  id="reminder-nutrition"
+                  className={
+                    userPreferences.nutritionalpreferences === true
+                      ? "solid"
+                      : "transparent"}>
                   <h5>Nutritional</h5>
-                  <span>Currently Selected</span>
-                  <img alt="nutrition-img" src={salad} />
+                  <img
+                    className="nutritional"
+                    alt="self-care-img"
+                    src={salad}
+                  />
                 </div>
               </div>
             </div>

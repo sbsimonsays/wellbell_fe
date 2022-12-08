@@ -112,31 +112,37 @@ font-family: 'DM Sans', sans-serif;
 font-size: 12px;
 }
 
-.reminder-physical{
-   height: 230px;
-   width: 180px;
-   border-radius: 10px;
-   background-color: orange;
-   margin: 8px;
-}
-
-
-
-.reminder-self-care{
+#reminder-physical {
     height: 230px;
-   width: 180px;
-   border-radius: 10px;
+    width: 180px;
+    border-radius: 10px;
+    background-color: orange;
+    margin: 8px;
+  }
+  
+  #reminder-self-care {
+    height: 230px;
+    width: 180px;
+    border-radius: 10px;
     background-color: rgb(251, 251, 96);
-   margin: 8px;
-}
-
-.reminder-nutrition{
+    margin: 8px;
+  }
+  
+  #reminder-nutrition {
     height: 230px;
-   width: 180px;
+    width: 180px;
     border-radius: 10px;
     background-color: rgb(189, 240, 111);
-   margin: 8px;
-}
+    margin: 8px;
+  }
+  
+  .solid {
+    opacity: 1;
+  }
+  
+  .transparent {
+    opacity: 0.25;
+  }
 
 #wave {
     position: relative;

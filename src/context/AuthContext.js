@@ -159,6 +159,7 @@ export const AuthContextProvider = ({ children }) => {
     });
   }, []);
   console.log(user);
+
   //if theres a user --> query db????? and spread info into useState
   return (
     <AuthContext.Provider
