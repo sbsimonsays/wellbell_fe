@@ -1,6 +1,11 @@
 import React from 'react'
 import DashNav from "./DashNav";
 import "./About.css";
+import jede from "../../public/jede.jpeg"
+import john from "../../public/john.jpeg"
+import kim from "../../public/kim.jpeg"
+import spencer from "../../public/spencer2.jpeg"
+import zane from "../../public/zane3.jpeg"
 
 export default function About() {
   return (
@@ -21,6 +26,11 @@ it is just as easy to neglect your wellbeing while doing so. According to the Am
 </div>
 <div className='our-team'>
   <div className='our-team-faces'>
+    <img alt="jede" src={jede}/>
+    <img alt="kim" src={kim}/>
+    <img alt="john" src={john}/>
+    <img alt="spencer" src={spencer}/>
+    <img alt="zane" src={zane}/>
   </div>
 </div>
        </div>
