@@ -12,6 +12,7 @@ function Notifications() {
       <div className='bells-main'>
         <div className='bells-title'>
         <h1>User's Recent WellBells</h1>
+        <button>ADD BELL</button>
         </div>
         <div className='recent-bells'>
         <div className='bells-left'>
