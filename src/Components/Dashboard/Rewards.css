@@ -40,11 +40,41 @@
     display: flex;
     flex-direction: row;
     padding: 35px;
+    margin-top: 50px;
 }
 .physical-progress{
     display: flex;
     flex: 1;
     margin-right: 50px;
+}
+
+.progress-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+.progress-info > h2{
+    padding-bottom: 30px;
+    font-family: 'DM Sans', sans-serif;
+    color: black;
+    font-size: 20px;
+    }
+
+ .progress-info > h4{
+        padding-top: 20px;
+        font-family: 'DM Sans', sans-serif;
+        color: orange;
+        font-weight: 500;
+        font-size: 20px;
+        }
+
+.progress-info > h5{
+padding-top: 40px;
+font-family: 'DM Sans', sans-serif;
+color:black;
+font-size: 15px;
 }
 
 .nutritional-progress{
@@ -77,7 +107,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin-top: 325px;
 }
 
 .partner-circles-text{

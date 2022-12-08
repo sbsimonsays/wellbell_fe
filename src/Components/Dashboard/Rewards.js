@@ -22,13 +22,28 @@ function Rewards() {
         <div className='rewards-info'>
     <div className='progress-bars'>
       <div className='physical-progress'>
-      <ProgressBar progress={50}/>
+        <div className='progress-info'>
+          <h2>Physical Points:</h2>
+      <ProgressBar className= "bar" progress={50}/>
+      <h5>Points Untill Your Next Reward:</h5>
+      <h4>50</h4>
+        </div>
       </div>
       <div className='nutritional-progress'>
-      <ProgressBar progress={50}/>
+        <div className='progress-info'>
+          <h2>Nutritional Points:</h2>
+      <ProgressBar className="bar" progress={50}/>
+      <h5>Points Untill Your Next Reward:</h5>
+      <h4>50</h4>
+        </div>
       </div>
       <div className='self-care-progress'>
-      <ProgressBar progress={50}/>
+        <div className='progress-info'>
+          <h2>Self-Care Points:</h2>
+      <ProgressBar className="bar" progress={50}/>
+      <h5>Points Untill Your Next Reward:</h5>
+      <h4>50</h4>
+        </div>
       </div>
     </div>
     <div  className='partners'>
