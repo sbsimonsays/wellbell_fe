@@ -2,7 +2,7 @@
 import DashNav from './DashNav'
 import "./Dashboard.css"
 
-const API = process.env.REACT_APP_API_URL
+const API = process.env.REACT_APP_API_URL;
 
 // import Profile from "../Dashboard/Profile.js"
 // import Notifications from './Notifications.js

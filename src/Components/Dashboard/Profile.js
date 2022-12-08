@@ -27,7 +27,6 @@ function Profile() {
     mentalpreferences: null,
   });
 
-
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -59,7 +58,7 @@ function Profile() {
             <div className="user-details">
               <img
                 className="user-photo"
-                src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg"
+                src={userPreferences.photourl}
               />
               <div className="details-list">
                 <h5>First Name: {userPreferences.firstname}</h5>
@@ -71,25 +70,31 @@ function Profile() {
             <div className="reminder-type-blocks">
               <h2>Your WellBell Preferences</h2>
               <div className="reminder-cards">
-                <div id="reminder-physical"
-                    className={ userPreferences.physicalpreferences === true ?
-                    "solid" : "transparent" }>
+                <div
+                  id="reminder-physical"
+                  className={
+                    userPreferences.physicalpreferences === true
+                      ? "solid"
+                      : "transparent"}>
                   <h5>Physical</h5>
-                  <span>{userPreferences.physicalpreferences === true ? "Currently Selected" : "Not Selected" }</span>
                   <img className="physical" alt="self-care-img" src={yoga} />
                 </div>
-                <div id="reminder-self-care"
-                className={ userPreferences.mentalpreferences === true ?
-                  "solid" : "transparent" }>
+                <div
+                  id="reminder-self-care"
+                  className={
+                    userPreferences.mentalpreferences === true
+                      ? "solid"
+                      : "transparent"}>
                   <h5>Self-Care</h5>
-                  <span>{userPreferences.mentalpreferences === true ? "Currently Selected" : "Not Selected" }</span>
                   <img className="selfcare" alt="self-care-img" src={spa} />
                 </div>
-                <div id="reminder-nutrition" 
-                className={ userPreferences.nutritionalpreferences === true ?
-                    "solid" : "transparent" }>
+                <div
+                  id="reminder-nutrition"
+                  className={
+                    userPreferences.nutritionalpreferences === true
+                      ? "solid"
+                      : "transparent"}>
                   <h5>Nutritional</h5>
-                  <span>{userPreferences.nutritionalpreferences === true ? "Currently Selected" : "Not Selected" }</span>
                   <img
                     className="nutritional"
                     alt="self-care-img"
@@ -100,9 +105,7 @@ function Profile() {
             </div>
           </div>
         </div>
-        <div className="points-bars">
-
-        </div>
+        <div className="points-bars"></div>
       </div>
     </div>
   );
