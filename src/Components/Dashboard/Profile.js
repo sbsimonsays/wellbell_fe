@@ -39,7 +39,7 @@ function Profile() {
     } else {
       if (userPreferences) {
         axios
-          .get(`${API}/users/zfqiEWSrzLQCvnhIgEC08Dahl5t1`)
+          .get(`${API}/users/YNWTla5dkzVnleNytVIH93DYFNf1`)
           .then((res) => setUserPreferences(res.data.payload));
       }
     }
