@@ -25,6 +25,7 @@ function Profile() {
     physicalpreferences: null,
     nutritionalpreferences: null,
     mentalpreferences: null,
+    photourl: ''
   });
 
   const { user } = useContext(AuthContext);
@@ -38,7 +39,7 @@ function Profile() {
     } else {
       if (userPreferences) {
         axios
-          .get(`${API}/users/YNWTla5dkzVnleNytVIH93DYFNf1`)
+          .get(`${API}/users/zfqiEWSrzLQCvnhIgEC08Dahl5t1`)
           .then((res) => setUserPreferences(res.data.payload));
       }
     }
