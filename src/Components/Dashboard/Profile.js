@@ -4,9 +4,12 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashNav from "./DashNav";
-import yoga from "../../public/yoga-stance.png";
-import salad from "../../public/salad.png";
-import spa from "../../public/spa.png";
+
+import yoga from "../../public/yoga-stance.png" 
+import salad from "../../public/salad.png" 
+import spa from "../../public/spa.png" 
+import { retrieveToken } from "../../Firebase/firebase";
+
 
 import "./Profile.css";
 
@@ -21,9 +24,14 @@ function Profile({ existingUser, setExistingUser }) {
   useEffect(() => {
     if (!user) {
       alert("No user, re-routing to the login page!");
-      navigate("/login");
-    } else {
-      if (!existingUser.email) {
+
+      navigate("/login")
+    }else{
+      retrieveToken()
+   
+      if(!existingUser.email){
+ 
+
         axios
           .get(`${API}/users/${user.uid}`)
           .then((res) => setExistingUser(res.data.payload));
@@ -46,6 +54,7 @@ function Profile({ existingUser, setExistingUser }) {
                 src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg"
               />
               <div className="details-list">
+
                 <h5>
                   First Name: {""} {existingUser.firstname}
                 </h5>
@@ -58,6 +67,7 @@ function Profile({ existingUser, setExistingUser }) {
                 <h5>
                   Email: {""} {existingUser.email}
                 </h5>
+
               </div>
             </div>
             <div className="reminder-type-blocks">

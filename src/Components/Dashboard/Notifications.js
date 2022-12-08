@@ -4,6 +4,11 @@ import "./Notifications.css"
 import salad from "../../public/salad.png" 
 import yoga from "../../public/yoga-stance.png"
 import spa from "../../public/spa.png"
+
+//add list
+//add button simulates adding to ^list
+function Notifications() {
+
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -24,6 +29,7 @@ function Notifications({ existingUser, setExistingUser }) {
       }
     }
   }, [user]);
+
   return (
     <div className='bells-page'>
       <DashNav existingUser={existingUser}
