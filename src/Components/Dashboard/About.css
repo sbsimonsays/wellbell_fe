@@ -76,9 +76,17 @@
 
 }
 
-.our-team-content{
+.our-team-faces{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    margin: 0% 23%;
 }
 
+
+.our-team-faces > img {
+    border-radius: 50%;
+    width: 180px;
+    height: 190px;
+    padding: 10px;
+}
