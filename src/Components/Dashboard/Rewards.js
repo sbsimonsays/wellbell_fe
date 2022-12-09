@@ -1,18 +1,19 @@
-import React, { useContext, useEffect } from 'react'
-import DashNav from './DashNav'
+import React, { useContext, useEffect } from "react";
+import DashNav from "./DashNav";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import bbandb from "../../public/bbandb.png"
-import cliffbar from "../../public/cliffbar.png"
-import planetfitness from "../../public/planetfitness.png"
-import sephora from "../../public/sephora.jpeg"
-import smartwater from "../../public/smartwater.webp"
-import wholefoods from "../../public/wholefoods.png"
-import ProgressBar from './ProgressBar'
-import "./Rewards.css"
+import bbandb from "../../public/bbandb.png";
+import cliffbar from "../../public/cliffbar.png";
+import planetfitness from "../../public/planetfitness.png";
+import sephora from "../../public/sephora.jpeg";
+import smartwater from "../../public/smartwater.webp";
+import wholefoods from "../../public/wholefoods.png";
+import ProgressBar from "./ProgressBar";
+import "./Rewards.css";
 
 const API = process.env.REACT_APP_API_URL;
+
 function Rewards({ existingUser, setExistingUser }) {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -29,15 +30,13 @@ function Rewards({ existingUser, setExistingUser }) {
     }
   }, [user]);
   return (
-
-    <div className='rewards-page'>
-      <DashNav existingUser={existingUser}
-                setExistingUser={setExistingUser}
-              />
-      <div className='rewards-main'>
-      <div className="profile-title">
+    <div className="rewards-page">
+      <DashNav existingUser={existingUser} setExistingUser={setExistingUser} />
+      <div className="rewards-main">
+        <div className="profile-title">
           <h1>{existingUser.firstname}'s Rewards</h1>
         </div>
+
         <div className='rewards-info'>
     <div className='progress-bars'>
       <div className='physical-progress'>
@@ -80,14 +79,12 @@ function Rewards({ existingUser, setExistingUser }) {
 <img className='partner-logo' src={sephora}/>
 <img className='partner-logo' src={wholefoods}/>
   </div>
-
-</div>
-
-      </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Rewards
+export default Rewards;

@@ -5,11 +5,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashNav from "./DashNav";
 
-import yoga from "../../public/yoga-stance.png" 
-import salad from "../../public/salad.png" 
-import spa from "../../public/spa.png" 
+import yoga from "../../public/yoga-stance.png";
+import salad from "../../public/salad.png";
+import spa from "../../public/spa.png";
 import { retrieveToken } from "../../Firebase/firebase";
-
 
 import "./Profile.css";
 
@@ -25,13 +24,11 @@ function Profile({ existingUser, setExistingUser }) {
     if (!user) {
       alert("No user, re-routing to the login page!");
 
-      navigate("/login")
-    }else{
-      retrieveToken()
-   
-      if(!existingUser.email){
- 
+      navigate("/login");
+    } else {
+      retrieveToken();
 
+      if (!existingUser.email) {
         axios
           .get(`${API}/users/${user.uid}`)
           .then((res) => setExistingUser(res.data.payload));
@@ -54,7 +51,6 @@ function Profile({ existingUser, setExistingUser }) {
                 src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg"
               />
               <div className="details-list">
-
                 <h5>
                   First Name: {""} {existingUser.firstname}
                 </h5>
@@ -67,26 +63,47 @@ function Profile({ existingUser, setExistingUser }) {
                 <h5>
                   Email: {""} {existingUser.email}
                 </h5>
-
               </div>
             </div>
             <div className="reminder-type-blocks">
-              <h2>Your WellBell Types</h2>
+              <h2>Your WellBell Preferences</h2>
               <div className="reminder-cards">
-                <div className="reminder-physical">
+                <div
+                  id="reminder-physical"
+                  className={
+                    userPreferences.physicalpreferences === true
+                      ? "solid"
+                      : "transparent"
+                  }
+                >
                   <h5>Physical</h5>
-                  <span>Currently Selected</span>
-                  <img alt="physical-img" src={yoga} />
+                  <img className="physical" alt="self-care-img" src={yoga} />
                 </div>
-                <div className="reminder-self-care">
+                <div
+                  id="reminder-self-care"
+                  className={
+                    userPreferences.mentalpreferences === true
+                      ? "solid"
+                      : "transparent"
+                  }
+                >
                   <h5>Self-Care</h5>
-                  <span>Currently Selected</span>
-                  <img alt="self-care-img" src={spa} />
+                  <img className="selfcare" alt="self-care-img" src={spa} />
                 </div>
-                <div className="reminder-nutrition">
+                <div
+                  id="reminder-nutrition"
+                  className={
+                    userPreferences.nutritionalpreferences === true
+                      ? "solid"
+                      : "transparent"
+                  }
+                >
                   <h5>Nutritional</h5>
-                  <span>Currently Selected</span>
-                  <img alt="nutrition-img" src={salad} />
+                  <img
+                    className="nutritional"
+                    alt="self-care-img"
+                    src={salad}
+                  />
                 </div>
               </div>
             </div>

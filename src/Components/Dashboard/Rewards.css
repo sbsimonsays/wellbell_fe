@@ -1,38 +1,37 @@
-.rewards-page{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    max-height:100vh;
-    overflow:hidden;
+.rewards-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
-.rewards-main{
-    width: 100%;
-    background-color: #e7dfd8;
-    
+.rewards-main {
+  width: 100%;
+  background-color: #e7dfd8;
 }
 
-.rewards-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.rewards-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .rewards-title h1 {
-    font-family: 'Livvic', sans-serif;
-    text-align: center;
-    color: #03989e;
-    margin-bottom: 30px;
-    font-size: 30px;
-    font-weight: 500;
-    margin-top: 60px;
+  font-family: "Livvic", sans-serif;
+  text-align: center;
+  color: #03989e;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 60px;
 }
 
-.rewards-info{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.rewards-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .progress-bars{
@@ -42,6 +41,7 @@
     padding: 35px;
     margin-top: 50px;
 }
+
 .physical-progress{
     display: flex;
     flex: 1;
@@ -55,6 +55,7 @@
     height: 100%;
     align-items: center;
 }
+
 .progress-info > h2{
     padding-bottom: 30px;
     font-family: 'DM Sans', sans-serif;
@@ -83,17 +84,22 @@ font-size: 15px;
     margin-right: 50px;
 }
 
-.self-care-progress{
-    display: flex;
-    flex: 1;
-
+.nutritional-progress {
+  display: flex;
+  flex: 1;
+  margin-right: 50px;
 }
 
-.partners{
-    width: 100%;
-    height: 45%;
-    display: flex;
-    flex: 1;
+.self-care-progress {
+  display: flex;
+  flex: 1;
+}
+
+.partners {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex: 1;
 }
 
 .partners h5 {
@@ -125,9 +131,9 @@ font-size: 15px;
     justify-content: center;
 }
 
-.partner-logo{
-    border-radius: 50%;
-    width: 180px;
-    height: 180px;
-    padding: 5px;
+.partner-logo {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  padding: 5px;
 }

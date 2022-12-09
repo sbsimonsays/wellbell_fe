@@ -112,17 +112,17 @@ export default BellsForm;
 //button submit should have start Date.now()
 //default frequency will be one hour
 // {
-  //     bells.map(bell => {
-  //         if(bell.type === selected){
-  //             console.log(bells[Math.floor(Math.random()* bells.length)])
-  //         }
-  //     })
-  //     // selected  &&  bells.type === "Physical" ? console.log(bells) : null
-  //     }
-  //  {
-  //           filteredBells = bells.filter(bell=> bell.type === reminderType)
-  //      }
-  //       {console.log(filteredBells)}
-  //       <button  type="reset"
-  //         onClick={resetRadioState}>RESET</button>
-  //           <p>{reminderType}</p>
+//     bells.map(bell => {
+//         if(bell.type === selected){
+//             console.log(bells[Math.floor(Math.random()* bells.length)])
+//         }
+//     })
+//     // selected  &&  bells.type === "Physical" ? console.log(bells) : null
+//     }
+//  {
+//           filteredBells = bells.filter(bell=> bell.type === reminderType)
+//      }
+//       {console.log(filteredBells)}
+//       <button  type="reset"
+//         onClick={resetRadioState}>RESET</button>
+//           <p>{reminderType}</p>
