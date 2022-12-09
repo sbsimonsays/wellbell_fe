@@ -1,4 +1,5 @@
 import { useContext, createContext, useEffect, useState } from "react";
+
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -6,12 +7,15 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+
 import { auth, retrieveToken } from "../Firebase/firebase";
+
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -37,15 +41,14 @@ export const AuthContextProvider = ({ children }) => {
         // gets firebase messaging token
         // FCMToken is the address of our Push Notification
         let FCMToken;
-  
-          console.log("Requesting permission...");
-          Notification.requestPermission().then((permission) => {
-            if (permission === "granted") {
-              FCMToken = retrieveToken();
-              console.log("Notification permission granted.");
-            }
-          });
-       
+
+        console.log("Requesting permission...");
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            FCMToken = retrieveToken();
+            console.log("Notification permission granted.");
+          }
+        });
 
         combinedObj.FCMToken = FCMToken;
         /* 

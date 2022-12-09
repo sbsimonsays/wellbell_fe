@@ -4,9 +4,11 @@ import logo from "../../public/wellbell.png";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
+
 const API = process.env.REACT_APP_API_URL;
+
 function DashNav({ existingUser, setExistingUser }) {
-  const { logOut, user,} = useContext(AuthContext);
+  const { logOut, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +26,9 @@ function DashNav({ existingUser, setExistingUser }) {
     <div className="dash-nav-main">
       <img onClick={() => navigate("/dashboard")} src={logo} className="logo" />
 
-      <span className="user-dash-greeting">Welcome {existingUser.firstname}!</span>
+      <span className="user-dash-greeting">
+        Welcome {existingUser.firstname}!
+      </span>
 
       <i
         onClick={() => navigate("/dashboard")}
@@ -42,7 +46,11 @@ function DashNav({ existingUser, setExistingUser }) {
         onClick={() => navigate("/dashboard/about")}
         className="dash-icon-info fa-solid fa-circle-info"
       ></i>
-      <i onClick={logOut} className="dash-icon fa fa-sign-out" aria-hidden="true"></i>
+      <i
+        onClick={logOut}
+        className="dash-icon fa fa-sign-out"
+        aria-hidden="true"
+      ></i>
     </div>
   );
 }

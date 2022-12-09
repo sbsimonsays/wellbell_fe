@@ -5,11 +5,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashNav from "./DashNav";
 
-import yoga from "../../public/yoga-stance.png" 
-import salad from "../../public/salad.png" 
-import spa from "../../public/spa.png" 
+import yoga from "../../public/yoga-stance.png";
+import salad from "../../public/salad.png";
+import spa from "../../public/spa.png";
 import { retrieveToken } from "../../Firebase/firebase";
-
 
 import "./Profile.css";
 
@@ -20,19 +19,16 @@ function Profile({ existingUser, setExistingUser }) {
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
- 
 
   useEffect(() => {
     if (!user) {
       alert("No user, re-routing to the login page!");
 
-      navigate("/login")
-    }else{
-      retrieveToken()
-   
-      if(!existingUser.email){
- 
+      navigate("/login");
+    } else {
+      retrieveToken();
 
+      if (!existingUser.email) {
         axios
           .get(`${API}/users/${user.uid}`)
           .then((res) => setExistingUser(res.data.payload));
@@ -55,7 +51,6 @@ function Profile({ existingUser, setExistingUser }) {
                 src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg"
               />
               <div className="details-list">
-
                 <h5>
                   First Name: {""} {existingUser.firstname}
                 </h5>
@@ -68,7 +63,6 @@ function Profile({ existingUser, setExistingUser }) {
                 <h5>
                   Email: {""} {existingUser.email}
                 </h5>
-
               </div>
             </div>
             <div className="reminder-type-blocks">
@@ -79,7 +73,9 @@ function Profile({ existingUser, setExistingUser }) {
                   className={
                     userPreferences.physicalpreferences === true
                       ? "solid"
-                      : "transparent"}>
+                      : "transparent"
+                  }
+                >
                   <h5>Physical</h5>
                   <img className="physical" alt="self-care-img" src={yoga} />
                 </div>
@@ -88,7 +84,9 @@ function Profile({ existingUser, setExistingUser }) {
                   className={
                     userPreferences.mentalpreferences === true
                       ? "solid"
-                      : "transparent"}>
+                      : "transparent"
+                  }
+                >
                   <h5>Self-Care</h5>
                   <img className="selfcare" alt="self-care-img" src={spa} />
                 </div>
@@ -97,7 +95,9 @@ function Profile({ existingUser, setExistingUser }) {
                   className={
                     userPreferences.nutritionalpreferences === true
                       ? "solid"
-                      : "transparent"}>
+                      : "transparent"
+                  }
+                >
                   <h5>Nutritional</h5>
                   <img
                     className="nutritional"

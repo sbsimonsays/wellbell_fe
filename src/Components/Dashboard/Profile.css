@@ -1,173 +1,172 @@
-.profile-page{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+.profile-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 }
 
-.profile-main{
-    width: 100%;
-    background-color: #e7dfd8;
-   
+.profile-main {
+  width: 100%;
+  background-color: #e7dfd8;
 }
 
-.profile-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.profile-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-title h1 {
-    font-family: 'Livvic', sans-serif;
-    text-align: center;
-    color: #03989e;
-    margin-bottom: 30px;
-    font-size: 30px;
-    font-weight: 500;
-    margin-top: 60px;
+  font-family: "Livvic", sans-serif;
+  text-align: center;
+  color: #03989e;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 60px;
 }
 
-.user-info{
-    width: 100%;
-    display: flex;
-    height: 100%;
-}
-.user-profile-left{
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.user-info {
+  width: 100%;
+  display: flex;
+  height: 100%;
 }
 
-.user-photo{
-    border-radius: 100px;
-    width: 150px;
-    height: 150px;
-    
+.user-profile-left {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.user-details{
-    width: 100%;
-    height: 35%;
-    background-color: #03999ee1;
-    border-radius: 10px;
-    margin-left: 50px;
-    display: flex;
-    align-items: center;
-    padding-left: 40px;
-    min-width: 300px;
-    max-width: 700px;
+.user-photo {
+  border-radius: 100px;
+  width: 150px;
+  height: 150px;
 }
 
-.details-list{
-    padding: 40px;
+.user-details {
+  width: 100%;
+  height: 35%;
+  background-color: #03999ee1;
+  border-radius: 10px;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  min-width: 300px;
+  max-width: 700px;
 }
 
-.reminder-type-blocks{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 40px;
-
+.details-list {
+  padding: 40px;
 }
 
-.reminder-type-blocks h2{
-    font-family: 'Livvic', sans-serif;
-    text-align: center;
-    color: #03989e;
-    font-size: 25px;
-    font-weight: 500;
-    margin-top: 5%;
-}
-.reminder-cards{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 3%;
+.reminder-type-blocks {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
 }
 
-.reminder-cards > div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
+.reminder-type-blocks h2 {
+  font-family: "Livvic", sans-serif;
+  text-align: center;
+  color: #03989e;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 5%;
+}
+
+.reminder-cards {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3%;
+}
+
+.reminder-cards > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .reminder-cards > div > img {
-    height: 150px;
+  height: 150px;
 }
 
-.reminder-cards > div > h5{
-    font-family: 'Livvic', sans-serif;
-    text-align: center;
-    color: #03989e;
-    font-weight: 500;
-    font-size: 20px;
+.reminder-cards > div > h5 {
+  font-family: "Livvic", sans-serif;
+  text-align: center;
+  color: #03989e;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .reminder-cards > div > span {
-font-family: 'DM Sans', sans-serif;
-font-size: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
 }
 
 #reminder-physical {
-    height: 230px;
-    width: 180px;
-    border-radius: 10px;
-    background-color: orange;
-    margin: 8px;
-  }
-  
-  #reminder-self-care {
-    height: 230px;
-    width: 180px;
-    border-radius: 10px;
-    background-color: rgb(251, 251, 96);
-    margin: 8px;
-  }
-  
-  #reminder-nutrition {
-    height: 230px;
-    width: 180px;
-    border-radius: 10px;
-    background-color: rgb(189, 240, 111);
-    margin: 8px;
-  }
-  
-  .solid {
-    opacity: 1;
-  }
-  
-  .transparent {
-    opacity: 0.25;
-  }
+  height: 230px;
+  width: 180px;
+  border-radius: 10px;
+  background-color: orange;
+  margin: 8px;
+}
+
+#reminder-self-care {
+  height: 230px;
+  width: 180px;
+  border-radius: 10px;
+  background-color: rgb(251, 251, 96);
+  margin: 8px;
+}
+
+#reminder-nutrition {
+  height: 230px;
+  width: 180px;
+  border-radius: 10px;
+  background-color: rgb(189, 240, 111);
+  margin: 8px;
+}
+
+.solid {
+  opacity: 1;
+}
+
+.transparent {
+  opacity: 0.25;
+}
 
 #wave {
-    position: relative;
-    height: 70px;
-    width: 600px;
-    background: #e0efe3;
-  }
-  #wave:before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 340px;
-    height: 80px;
-    right: -5px;
-    top: 40px;
-  }
-  #wave:after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 300px;
-    height: 70px;
-    background-color: #e0efe3;
-    left: 0;
-    top: 27px;
-  }
+  position: relative;
+  height: 70px;
+  width: 600px;
+  background: #e0efe3;
+}
+#wave:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 340px;
+  height: 80px;
+  right: -5px;
+  top: 40px;
+}
+#wave:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 300px;
+  height: 70px;
+  background-color: #e0efe3;
+  left: 0;
+  top: 27px;
+}
