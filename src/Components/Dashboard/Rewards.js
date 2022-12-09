@@ -36,32 +36,49 @@ function Rewards({ existingUser, setExistingUser }) {
         <div className="profile-title">
           <h1>{existingUser.firstname}'s Rewards</h1>
         </div>
-        <div className="rewards-info">
-          <div className="progress-bars">
-            <div className="physical-progress">
-              <ProgressBar progress={50} />
-            </div>
-            <div className="nutritional-progress">
-              <ProgressBar progress={50} />
-            </div>
-            <div className="self-care-progress">
-              <ProgressBar progress={50} />
-            </div>
-          </div>
-          <div className="partners">
-            <div className="partner-circles">
-              <div className="partner-circles-text">
-                <h5>In Partnership With </h5>
-              </div>
 
-              <div className="partner-images">
-                <img className="partner-logo" src={bbandb} />
-                <img className="partner-logo" src={cliffbar} />
-                <img className="partner-logo" src={planetfitness} />
-                <img className="partner-logo" src={smartwater} />
-                <img className="partner-logo" src={sephora} />
-                <img className="partner-logo" src={wholefoods} />
-              </div>
+        <div className='rewards-info'>
+    <div className='progress-bars'>
+      <div className='physical-progress'>
+        <div className='progress-info'>
+          <h2>Physical Points:</h2>
+      <ProgressBar className= "bar" progress={50}/>
+      <h5>Points Untill Your Next Reward:</h5>
+      <h4>50</h4>
+        </div>
+      </div>
+      <div className='nutritional-progress'>
+        <div className='progress-info'>
+          <h2>Nutritional Points:</h2>
+      <ProgressBar className="bar" progress={50}/>
+      <h5>Points Untill Your Next Reward:</h5>
+      <h4>50</h4>
+        </div>
+      </div>
+      <div className='self-care-progress'>
+        <div className='progress-info'>
+          <h2>Self-Care Points:</h2>
+      <ProgressBar className="bar" progress={50}/>
+      <h5>Points Untill Your Next Reward:</h5>
+      <h4>50</h4>
+        </div>
+      </div>
+    </div>
+    <div  className='partners'>
+      
+<div className='partner-circles'>
+  <div className='partner-circles-text'>
+      <h5>In Partnership With </h5>
+  </div>
+
+  <div className='partner-images'>
+<img className='partner-logo' src={bbandb}/>
+<img className='partner-logo' src={cliffbar}/>
+<img className='partner-logo' src={planetfitness}/>
+<img className='partner-logo' src={smartwater}/>
+<img className='partner-logo' src={sephora}/>
+<img className='partner-logo' src={wholefoods}/>
+  </div>
             </div>
           </div>
         </div>
