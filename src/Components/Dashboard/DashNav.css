@@ -1,33 +1,32 @@
-.dash-nav-main{
-    width: 200px;
-    height: 100%;
-    background-color: #03999ee1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-
+.dash-nav-main {
+  width: 200px;
+  height: 100%;
+  background-color: #03999ee1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .dash-icon {
-    color:#6ce5e8;
-    font-size: 60px;
-    cursor: pointer;
-    padding: 25px;
+  color: #6ce5e8;
+  font-size: 60px;
+  cursor: pointer;
+  padding: 25px;
 }
 
-.dash-icon-info{
-    color:#6ce5e8;
-    font-size: 60px;
-    cursor: pointer;
-    margin-top: 150px;
+.dash-icon-info {
+  color: #6ce5e8;
+  font-size: 60px;
+  cursor: pointer;
+  margin-top: 150px;
 }
 
 .user-dash-greeting {
-    color: white;
-    font-family:'DM Sans', sans-serif;
-    margin-bottom: 35px;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  margin-bottom: 35px;
 }
 
-.logo{
-    margin-bottom: -30px;
+.logo {
+  margin-bottom: -30px;
 }

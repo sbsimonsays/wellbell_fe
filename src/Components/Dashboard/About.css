@@ -1,79 +1,82 @@
-.about-page{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    max-height:100vh;
-    overflow:hidden;
+.about-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
-.about-main{
-    width: 100%;
-    background-color: #e7dfd8;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   
+.about-main {
+  width: 100%;
+  background-color: #e7dfd8;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.about-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.about-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .about-title h1 {
-    font-family: 'Livvic', sans-serif;
-    text-align: center;
-    color: #03989e;
-    margin-bottom: 30px;
-    font-size: 30px;
-    font-weight: 500;
-    margin-top: 60px;
+  font-family: "Livvic", sans-serif;
+  text-align: center;
+  color: #03989e;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 60px;
 }
-.about-info{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.about-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-.our-mission{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex: 1;
-}
-
-.our-team{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex: 1;
+.our-mission {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex: 1;
 }
 
-.our-mission-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.our-team {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex: 1;
 }
 
-.our-mission-text > h3{
-    font-family: 'DM Sans', sans-serif;
-    color: orange;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 70px;
-} 
+.our-mission-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.our-mission-text > h3 {
+  font-family: "DM Sans", sans-serif;
+  color: orange;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 70px;
+}
 
-.our-mission-text > h5{
-    font-family: 'DM Sans', sans-serif;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    padding: 50px 170px;
+.our-mission-text > h5 {
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  padding: 50px 170px;
+}
 
+.our-team-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .our-team-faces{
@@ -82,7 +85,6 @@
     align-items: center;
     margin: 0% 23%;
 }
-
 
 .our-team-faces > img {
     border-radius: 50%;
