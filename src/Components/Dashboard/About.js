@@ -56,5 +56,6 @@ it is just as easy to neglect your wellbeing while doing so. According to the Am
 </div>
        </div>
     </div>
+    </div>
   );
 }

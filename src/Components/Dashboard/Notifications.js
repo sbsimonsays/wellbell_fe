@@ -7,7 +7,7 @@ import spa from "../../public/spa.png"
 
 //add list
 //add button simulates adding to ^list
-function Notifications() {
+
 
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
