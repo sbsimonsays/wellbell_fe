@@ -1,17 +1,42 @@
-import React from 'react'
+import React,{ useContext, useEffect} from 'react'
 import DashNav from './DashNav'
 import "./Notifications.css"
 import salad from "../../public/salad.png" 
 import yoga from "../../public/yoga-stance.png"
 import spa from "../../public/spa.png"
 
+//add list
+//add button simulates adding to ^list
 function Notifications() {
+
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+const API = process.env.REACT_APP_API_URL;
+
+function Notifications({ existingUser, setExistingUser }) {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      alert("No user, re-routing to the login page!");
+      navigate("/login");
+    } else {
+      if (!existingUser) {
+        axios
+          .get(`${API}/users/${user.uid}`)
+          .then((res) => setExistingUser(res.data.payload));
+      }
+    }
+  }, [user]);
+
   return (
     <div className='bells-page'>
-      <DashNav/>
+      <DashNav existingUser={existingUser}
+                setExistingUser={setExistingUser}/>
       <div className='bells-main'>
         <div className='bells-title'>
-        <h1>User's Recent WellBells</h1>
+        <h1>{existingUser.firstname}'s Recent WellBells</h1>
         </div>
         <div className='recent-bells'>
         <div className='bells-left'>

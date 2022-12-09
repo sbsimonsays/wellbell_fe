@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import DashNav from './DashNav'
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import bbandb from "../../public/bbandb.png"
 import cliffbar from "../../public/cliffbar.png"
 import planetfitness from "../../public/planetfitness.png"
@@ -9,15 +12,31 @@ import wholefoods from "../../public/wholefoods.png"
 import ProgressBar from './ProgressBar'
 import "./Rewards.css"
 
-function Rewards() {
-
+const API = process.env.REACT_APP_API_URL;
+function Rewards({ existingUser, setExistingUser }) {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      alert("No user, re-routing to the login page!");
+      navigate("/login");
+    } else {
+      if (!existingUser.email) {
+        axios
+          .get(`${API}/users/${user.uid}`)
+          .then((res) => setExistingUser(res.data.payload));
+      }
+    }
+  }, [user]);
   return (
 
     <div className='rewards-page'>
-      <DashNav />
+      <DashNav existingUser={existingUser}
+                setExistingUser={setExistingUser}
+              />
       <div className='rewards-main'>
       <div className="profile-title">
-          <h1>User's Rewards</h1>
+          <h1>{existingUser.firstname}'s Rewards</h1>
         </div>
         <div className='rewards-info'>
     <div className='progress-bars'>

@@ -26,6 +26,7 @@ export const retrieveToken = () => {
     return getToken(messaging, {vapidKey: 'BP2vnUBO-X6Aw6KNtsS9Pst64XUuK_Pdscd70wrrylC_-g-oGW7nABQ6P-Mdr32jBL8isvGGB4Hn2MSb73DzwVk'}).then((currentToken) => {
       if (currentToken) {
         console.log('current token for client: ', currentToken);
+        return currentToken;
         // Track the token -> client mapping, by sending to backend server
         // show on the UI that permission is secured
       } else {

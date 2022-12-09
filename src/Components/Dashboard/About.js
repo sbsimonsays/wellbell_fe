@@ -1,16 +1,37 @@
-import React from 'react'
+import React, { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import DashNav from "./DashNav";
 import "./About.css";
+
 import jede from "../../public/jede.jpeg"
 import john from "../../public/john.jpeg"
 import kim from "../../public/kim.jpeg"
 import spencer from "../../public/spencer2.jpeg"
 import zane from "../../public/zane3.jpeg"
 
-export default function About() {
+import { AuthContext } from "../../context/AuthContext";
+import axios from "axios";
+const API = process.env.REACT_APP_API_URL;
+
+
+export default function About({ existingUser, setExistingUser }) {
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    } else {
+      if (!existingUser.email) {
+        axios
+          .get(`${API}/users/${user.uid}`)
+          .then((res) => setExistingUser(res.data.payload));
+      }
+    }
+  }, [user]);
   return (
+
     <div className='about-page'>
-        <DashNav/>
+         <DashNav existingUser={existingUser} setExistingUser={setExistingUser} />
     <div className='about-main'>
 <div className='about-title'>
 <h1>About WellBell</h1>
@@ -35,6 +56,5 @@ it is just as easy to neglect your wellbeing while doing so. According to the Am
 </div>
        </div>
     </div>
-    </div>
-  )
+  );
 }
