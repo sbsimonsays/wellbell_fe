@@ -16,16 +16,15 @@ function Profile() {
   const [userPreferences, setUserPreferences] = useState({
     email: "",
     username: "",
-    password: "",
     firstname: "",
     lastname: "",
     physicalpoints: 0,
     nutritionalpoints: 0,
     selfcarepoints: 0,
-    physicalpreferences: null,
-    nutritionalpreferences: null,
-    mentalpreferences: null,
-    photourl: ''
+    physicalpreferences: false,
+    nutritionalpreferences: false,
+    mentalpreferences: false,
+    photourl: ""
   });
 
   const { user } = useContext(AuthContext);

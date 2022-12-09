@@ -1,6 +1,5 @@
-
-import DashNav from './DashNav'
-import "./Dashboard.css"
+import DashNav from "./DashNav";
+import "./Dashboard.css";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -9,21 +8,17 @@ const API = process.env.REACT_APP_API_URL;
 // import Rewards from "./Rewards.js"
 
 function Dashboard() {
-  
   return (
-    <div className='dashboard'>
-   
+    <div className="dashboard">
       <DashNav />
 
-        {/* <Routes>
+      {/* <Routes>
           <Route path="/" element={<Profile />} />
           <Route path="/bells" element={<Notifications/>} />
           <Route path="/rewards" element={<Rewards/>} />
         </Routes> */}
     </div>
-  )
+  );
 }
 
-export default Dashboard
-
-//
+export default Dashboard;

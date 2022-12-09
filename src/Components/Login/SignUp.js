@@ -10,7 +10,6 @@ function SignUp() {
   const [newUser, setNewUser] = useState({
     email:"", 
     username:"", 
-    password:"",
     firstname:"", 
     lastname:"", 
     physicalpoints:0, 
@@ -18,7 +17,8 @@ function SignUp() {
     selfcarepoints:0, 
     physicalpreferences: false,
     nutritionalpreferences: false, 
-    mentalpreferences: false
+    mentalpreferences: false,
+    photourl: ''
  })
   const {createUser, user, setSignUpDetails } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -86,9 +86,10 @@ function SignUp() {
                 <input onChange= {handleTextChange} id="firstname" value={newUser.firstname} placeholder="First name" type="text" />
                 <span className="signup-info">Last name</span>
                 <input onChange= {handleTextChange} id="lastname" value={newUser.lastname} placeholder="Last name" type="text" />
-                <span className="signup-info">Select the types of reminders you wish to receive</span>
+                <span className="signup-info">Photo URL</span>
+                <input onChange= {handleTextChange} id="photourl" value={newUser.photourl} placeholder="Add URL of Image" type="text" />
                 
-
+                <span className="signup-info">Select the types of reminders you wish to receive</span>
                 <div className="signup-checkboxes">
                   <div>
                   <input type="checkbox" name="physical"/>
