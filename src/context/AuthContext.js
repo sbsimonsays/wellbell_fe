@@ -1,4 +1,5 @@
 import { useContext, createContext, useEffect, useState } from "react";
+import { getMessaging, getToken } from "firebase/messaging";
 
 import {
   GoogleAuthProvider,
@@ -25,6 +26,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [signUpDetails, setSignUpDetails] = useState(null);
+  const messaging = getMessaging();
 
   const auth = getAuth();
 
@@ -109,6 +111,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const signIn = async (user) => {
+    
     // console.log(user)
     const { email, password } = user;
     signInWithEmailAndPassword(auth, email, password)
@@ -116,6 +119,8 @@ export const AuthContextProvider = ({ children }) => {
         console.log(userCredential);
         // Signed in
         const user = userCredential.user;
+
+        
         // ...
       })
       .catch((error) => {
@@ -139,6 +144,8 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     auth.onAuthStateChanged((firebaseUser) => {
       if (firebaseUser) {
+
+    
         // axios
         // .get(`${API}/users/${firebaseUser.uid}`)
         // .then(res =>{
