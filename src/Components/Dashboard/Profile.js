@@ -23,12 +23,10 @@ function Profile({ existingUser, setExistingUser }) {
   useEffect(() => {
     if (!user) {
       alert("No user, re-routing to the login page!");
-
       navigate("/login");
     } else {
       retrieveToken();
-
-      if (!existingUser.email) {
+    if (!existingUser.email) {
         axios
           .get(`${API}/users/${user.uid}`)
           .then((res) => setExistingUser(res.data.payload));
@@ -70,8 +68,8 @@ function Profile({ existingUser, setExistingUser }) {
               <div className="reminder-cards">
                 <div
                   id="reminder-physical"
-                  className={
-                    userPreferences.physicalpreferences === true
+                  value={
+                    existingUser.physicalpreferences === true
                       ? "solid"
                       : "transparent"
                   }
@@ -81,8 +79,8 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-self-care"
-                  className={
-                    userPreferences.mentalpreferences === true
+                  value={
+                    existingUser.mentalpreferences === true
                       ? "solid"
                       : "transparent"
                   }
@@ -92,8 +90,8 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-nutrition"
-                  className={
-                    userPreferences.nutritionalpreferences === true
+                  value={
+                    existingUser.nutritionalpreferences === true
                       ? "solid"
                       : "transparent"
                   }

@@ -29,8 +29,8 @@ export const AuthContextProvider = ({ children }) => {
   const auth = getAuth();
 
   const createUser = (valuesFromSignUpForm) => {
-    // setUser(valuesFromSignUpForm);
-    // console.log(valuesFromSignUpForm);
+       // setUser(valuesFromSignUpForm);
+       // console.log(valuesFromSignUpForm);
     const { email, password } = valuesFromSignUpForm;
 
     createUserWithEmailAndPassword(auth, email, password)

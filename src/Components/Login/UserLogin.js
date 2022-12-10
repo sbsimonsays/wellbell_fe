@@ -37,7 +37,7 @@ function UserLogin({ setExistingUser, existingUser }) {
   };
 
   const handleSubmit = () => {
-    signIn(firebaseCredentials);
+    signIn(firebaseCredentials)
     // .then((res) => {
     //   return axios.get(`${API}/users/${user.uid}`);
     // })
@@ -78,6 +78,7 @@ function UserLogin({ setExistingUser, existingUser }) {
               onChange={handleTextChange}
               id="password"
               value={firebaseCredentials.password}
+              required
               placeholder="Password"
               type="password"
             />
