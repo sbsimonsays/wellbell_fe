@@ -34,7 +34,7 @@ function Notifications({ existingUser, setExistingUser }) {
       <DashNav existingUser={existingUser} setExistingUser={setExistingUser} />
       <div className="bells-main">
         <div className="bells-title">
-          <h1>{existingUser.firstname}'s Recent WellBells</h1>
+          <h1>{existingUser.firstname}Maria's Recent WellBells</h1>
         </div>
         <div className="recent-bells">
           <div className="bells-left">

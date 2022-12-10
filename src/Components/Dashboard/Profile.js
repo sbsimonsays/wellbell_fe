@@ -100,8 +100,9 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-self-care"
+                  className="transparent"
                   value={
-                    existingUser.mentalpreferences === true
+                    existingUser.mentalpreferences === false
                       ? "solid"
                       : "transparent"
                   }
@@ -117,7 +118,6 @@ function Profile({ existingUser, setExistingUser }) {
                       : "transparent"
                   }
                 >
-                  <button onClick={handleClick}>click here</button>
                   <h5>Nutritional</h5>
                   <img
                     className="nutritional"
