@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashNav from "./DashNav";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 import yoga from "../../public/yoga-stance.png";
 import salad from "../../public/salad.png";
@@ -12,23 +13,41 @@ import { retrieveToken } from "../../Firebase/firebase";
 
 import "./Profile.css";
 
-const API = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL
+const messagingAPI = process.env.REACT_APP_MESSAGING_API_URL
 
 function Profile({ existingUser, setExistingUser }) {
   const [userPreferences, setUserPreferences] = useState(null);
   const { user } = useContext(AuthContext);
-
+  const [FCMToken, setFCMToken] = useState(null);
+  const messaging = getMessaging();
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    const payload = {
+      FCMToken:FCMToken
+    }
+    axios
+    .get(`${messagingAPI}?FCMToken=${FCMToken}`)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(e =>{
+      console.log(e)
+    })
+  }
 
   useEffect(() => {
     if (!user) {
       alert("No user, re-routing to the login page!");
-
       navigate("/login");
     } else {
-      retrieveToken();
-
-      if (!existingUser.email) {
+     retrieveToken()
+     .then(res => {
+      console.log(setFCMToken(res))
+     })
+   
+    if (!existingUser.email) {
         axios
           .get(`${API}/users/${user.uid}`)
           .then((res) => setExistingUser(res.data.payload));
@@ -70,8 +89,8 @@ function Profile({ existingUser, setExistingUser }) {
               <div className="reminder-cards">
                 <div
                   id="reminder-physical"
-                  className={
-                    userPreferences.physicalpreferences === true
+                  value={
+                    existingUser.physicalpreferences === true
                       ? "solid"
                       : "transparent"
                   }
@@ -81,8 +100,8 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-self-care"
-                  className={
-                    userPreferences.mentalpreferences === true
+                  value={
+                    existingUser.mentalpreferences === true
                       ? "solid"
                       : "transparent"
                   }
@@ -92,12 +111,13 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-nutrition"
-                  className={
-                    userPreferences.nutritionalpreferences === true
+                  value={
+                    existingUser.nutritionalpreferences === true
                       ? "solid"
                       : "transparent"
                   }
                 >
+                  <button onClick={handleClick}>click here</button>
                   <h5>Nutritional</h5>
                   <img
                     className="nutritional"

@@ -28,9 +28,9 @@ function App() {
     physicalpoints: 0,
     nutritionalpoints: 0,
     selfcarepoints: 0,
-    physicalpreferences: "",
-    nutritionalpreferences: "",
-    mentalpreferences: "",
+    physicalpreferences: "false",
+    nutritionalpreferences: "false",
+    mentalpreferences: "false",
     image: "",
   });
 
@@ -48,7 +48,7 @@ function App() {
               />
             }
           />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp setExistingUser={setExistingUser}/>} />
 
           <Route
             path="/dashboard"

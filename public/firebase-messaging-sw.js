@@ -20,10 +20,10 @@ firebase.initializeApp( {
 // Retrieve firebase messaging
 const messaging = firebase.messaging()
 
-Notification.requestPermission().then((permission) => {
-  if (permission === "granted") {
-    console.log("Notification permission granted.");
-  }})
+// Notification.requestPermission().then((permission) => {
+//   if (permission === "granted") {
+//     console.log("Notification permission granted.");
+//   }})
 messaging.onBackgroundMessage(function(payload) {
   console.log('Received background message ', payload);
  // Customize notification here

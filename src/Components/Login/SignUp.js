@@ -17,12 +17,12 @@ function SignUp() {
     physicalpoints: 0,
     nutritionalpoints: 0,
     selfcarepoints: 0,
-    physicalpreferences: null,
-    nutritionalpreferences: null,
-    mentalpreferences: null,
+    physicalpreferences: false,
+    nutritionalpreferences: false,
+    mentalpreferences: false,
     photoURL: "",
   });
-  
+
   const { createUser, user, setSignUpDetails } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -49,11 +49,6 @@ function SignUp() {
       navigate("/dashboard");
     }
   }, [user]);
-  //  create toggle for checkboxes
-  //<button onClick={buttonHandler} type="button">
-  // {preferences ? "True" ; "False"}
-  // </button>
-  // on submit axios post to bkend users
 
   return (
     <div className="signup-main">
@@ -83,7 +78,6 @@ function SignUp() {
                   placeholder="Password"
                   type="password"
                 />
-                {/* <input id= "re-password" placeholder="Re-Enter Password" type="password" /> */}
                 <div className="form-button-wrapper">
                   <button
                     onClick={(e) => {
@@ -139,7 +133,6 @@ function SignUp() {
                   placeholder="Add Image"
                   type="text"
                 />
-                <span className="signup-info"></span>
 
                 <span className="signup-info">
                   Select the types of reminders you wish to receive
@@ -201,6 +194,7 @@ function SignUp() {
                 </div>
               </>
             )}
+            ;
           </form>
         </div>
       </div>
