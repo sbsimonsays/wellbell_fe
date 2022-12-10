@@ -27,7 +27,7 @@ function DashNav({ existingUser, setExistingUser }) {
       <img onClick={() => navigate("/dashboard")} src={logo} className="logo" />
 
       <span className="user-dash-greeting">
-        Welcome {existingUser.firstname}!
+        Welcome Maria{existingUser.firstname}!
       </span>
 
       <i

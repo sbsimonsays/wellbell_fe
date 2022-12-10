@@ -49,7 +49,7 @@ function Profile({ existingUser, setExistingUser }) {
    
     if (!existingUser.email) {
         axios
-          .get(`${API}/users/${user.uid}`)
+          .get(`${API}/users/bchPRWrHRnQnGZsDcoHzDUppITw2`)
           .then((res) => setExistingUser(res.data.payload));
       }
     }
@@ -60,27 +60,27 @@ function Profile({ existingUser, setExistingUser }) {
       <DashNav existingUser={existingUser} setExistingUser={setExistingUser} />
       <div className="profile-main">
         <div className="profile-title">
-          <h1>{existingUser.firstname}'s Profile</h1>
+          <h1>{existingUser.firstname}Maria's Profile</h1>
         </div>
         <div className="user-info">
           <div className="user-profile-left">
             <div className="user-details">
               <img
                 className="user-photo"
-                src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg"
+                src="https://photos.psychologytoday.com/beb5db63-5916-4b34-9318-e2fae8c97746/2/320x400.jpeg"
               />
               <div className="details-list">
                 <h5>
-                  First Name: {""} {existingUser.firstname}
+                  First Name: Maria {""} {existingUser.firstname}
                 </h5>
                 <h5>
-                  Last Name: {""} {existingUser.lastname}
+                  Last Name: Torres {""} {existingUser.lastname}
                 </h5>
                 <h5>
-                  Username: {""} {existingUser.username}
+                  Username: mariat{""} {existingUser.username}
                 </h5>
                 <h5>
-                  Email: {""} {existingUser.email}
+                  Email: mariat@gmail.com{""} {existingUser.email}
                 </h5>
               </div>
             </div>
