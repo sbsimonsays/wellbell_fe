@@ -4,20 +4,15 @@ admin.initializeApp();
 
 //http request method
 exports.sendNotification = functions.https.onRequest((req, res) => {
-  const FCMToken = req.body.FCMToken; //get params like this
-
+  const FCMToken = req.query.FCMToken; //get params like this
+  
+  console.log(req.query);
 
 const payload = {
   token: FCMToken,
-  notification: {
-    title: "cloud function demo",
-    body: message,
-  },
-  data: {
-    body: message,
-  },
+  topic: "please give me a message"
 };
-
+console.log(payload)
 admin
   .messaging()
   .send(payload)
@@ -27,6 +22,7 @@ admin
     return { success: true };
   })
   .catch((error) => {
+    console.log(error, "errrorrr");
     return { error: error.code };
   });
 });

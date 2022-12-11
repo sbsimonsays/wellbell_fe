@@ -22,7 +22,6 @@ function App() {
     user_id: "",
     email: "",
     username: "",
-    password: "",
     firstname: "",
     lastname: "",
     physicalpoints: 0,
@@ -31,7 +30,7 @@ function App() {
     physicalpreferences: "",
     nutritionalpreferences: "",
     mentalpreferences: "",
-    image: "",
+    photourl: "",
   });
 
   return (

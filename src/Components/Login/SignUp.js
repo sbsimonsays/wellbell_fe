@@ -12,7 +12,6 @@ function SignUp() {
   const [newUser, setNewUser] = useState({
     email:"", 
     username:"", 
-    password:"",
     firstname:"", 
     lastname:"", 
     physicalpoints:0, 
@@ -20,7 +19,8 @@ function SignUp() {
     selfcarepoints:0, 
     physicalpreferences: false,
     nutritionalpreferences: false, 
-    mentalpreferences: false
+    mentalpreferences: false,
+    photourl: ""
  })
   const {createUser, user, setSignUpDetails } = useContext(AuthContext);
   const navigate = useNavigate();
