@@ -61,21 +61,16 @@ function Profile({ existingUser, setExistingUser }) {
   const data = {
     labels: ["Physical", "Nutritional", "Self-Care"],
     datasets: [
+     
       {
-        data: [8137119, 9431691, 10266674],
-        label: "Infected People",
-        borderColor: "#3333ff",
-        backgroundColor: "rgba(0, 0, 255, 0.5)",
-        fill: true
-      },
-      {
-        data: [1216410, 1371390, 1477380],
-        label: "Deaths People",
+        data: [existingUser.physicalpoints,existingUser.nutritionalpoints,existingUser.selfcarepoints],
+        label: "Wellness Points",
         borderColor: "#ff3333",
-        backgroundColor: "rgba(255, 0, 0, 0.5)",
+        backgroundColor: "#6ce5e8",
         fill: true
       }
     ]}
+
   return (
     <div className="profile-page">
       <DashNav existingUser={existingUser} setExistingUser={setExistingUser} />
@@ -157,7 +152,7 @@ function Profile({ existingUser, setExistingUser }) {
       options={{
         title: {
           display: true,
-          text: "COVID-19 Cases of Last 3 Months",
+          text: "Wellness Points",
           fontSize: 15
         },
         legend: {
