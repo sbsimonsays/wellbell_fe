@@ -15,6 +15,7 @@ import { retrieveToken } from "../../Firebase/firebase";
 import "./Profile.css";
 import { Bar } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
+import Modal from "./Modal";
 
 
 const API = process.env.REACT_APP_API_URL;
@@ -131,7 +132,7 @@ function Profile({ existingUser, setExistingUser }) {
                     : "transparent"
                   }
                   >
-                  <h5>Physical</h5>
+                  <h5>Physical </h5>
                   <img className="physical" alt="self-care-img" src={yoga} />
                 </div>
                 <div
@@ -165,6 +166,7 @@ function Profile({ existingUser, setExistingUser }) {
           </div>
         </div>
         <div className="points-bars">
+        <Modal/>
         <Bar type="bar"
       width={130}
       height={65}
