@@ -27,6 +27,7 @@ function Profile({ existingUser, setExistingUser }) {
     const payload = {
       FCMToken: FCMToken,
     };
+    
     axios
       .get(`${messagingAPI}?FCMToken=${FCMToken}`)
       .then((res) => {
