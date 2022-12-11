@@ -19,26 +19,54 @@ function Notifications({ existingUser, setExistingUser }) {
 
   const [bells, setBells] = useState([]);
 
-  useEffect(() => {
-    if (!user) {
+
+  
+  useEffect(()=>{
+
+        if (!user) {
       alert("No user, re-routing to the login page!");
       navigate("/login");
     } else {
       if (!existingUser) {
-        axios
-          .get(`${API}/users/${user.uid}`)
-          .then((res) => setExistingUser(res.data.payload));
+       
+        axios.all(
+     axios.get(`${API}/users/${user.uid}`),
+     axios.get(`${API}/bells`)
+    
+    )
+    .then(axios.spread(function (userResponse, bellsResponse) {
+      setExistingUser( userResponse.data.payload);
+      setBells( bellsResponse.data.payload);
+    }))
+    .catch((err) => console.err)
       }
-    };
 
-    axios
-      .get(`${API}/bells`)
-      .then((res) => {
-        setBells(res.data.payload);
-        console.log(bells);
-      })
-      .catch((err) => console.err);
-  }, [user], [bells]);
+
+
+  }},[])
+ 
+
+
+  // useEffect(() => {
+  //   if (!user) {
+  //     alert("No user, re-routing to the login page!");
+  //     navigate("/login");
+  //   } else {
+  //     if (!existingUser) {
+  //       axios
+  //         .get(`${API}/users/${user.uid}`)
+  //         .then((res) => setExistingUser(res.data.payload));
+  //     }
+  //   };
+
+  //   axios
+  //     .get(`${API}/bells`)
+  //     .then((res) => {
+  //       setBells(res.data.payload);
+  //       console.log(bells);
+  //     })
+  //     .catch((err) => console.err);
+  // }, [user], [bells]);
 
   // useEffect(() => {
   //   if (!user) {
@@ -59,9 +87,10 @@ function Notifications({ existingUser, setExistingUser }) {
       <div className="bells-main">
         <div className="bells-title">
           <h1>{existingUser.firstname}'s Recent WellBells</h1>
-          {console.log(bells)}
+          {console.log(existingUser)}
         </div>
         <div className="recent-bells">
+          {console.log(bells)}
           <div className="bells-left">
             <div className="single-bell-left-wrapper">
               <div className="single-bell-left-one">
