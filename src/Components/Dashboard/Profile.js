@@ -27,7 +27,7 @@ function Profile({ existingUser, setExistingUser }) {
     const payload = {
       FCMToken: FCMToken,
     };
-    
+
     axios
       .get(`${messagingAPI}?FCMToken=${FCMToken}`)
       .then((res) => {
@@ -126,8 +126,7 @@ function Profile({ existingUser, setExistingUser }) {
             </div>
           </div>
         </div>
-        <div className="points-bars">
-        </div>
+        <div className="points-bars"></div>
       </div>
     </div>
   );
