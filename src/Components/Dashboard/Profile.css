@@ -2,11 +2,18 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  max-height: 100vh;
+  overflow: hidden;
+  
+
 }
 
 .profile-main {
   width: 100%;
   background-color: #e7dfd8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .profile-title {
@@ -26,9 +33,17 @@
 }
 
 .user-info {
-  width: 100%;
-  display: flex;
+  width: 50%;
   height: 100%;
+  display: flex;
+  flex: 1;
+}
+
+.points-bars{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex: 1;
 }
 
 .user-profile-left {
