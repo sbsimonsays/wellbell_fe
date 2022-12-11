@@ -37,7 +37,7 @@ function UserLogin({ setExistingUser, existingUser }) {
   };
 
   const handleSubmit = () => {
-    signIn(firebaseCredentials)
+    signIn(firebaseCredentials);
     // .then((res) => {
     //   return axios.get(`${API}/users/${user.uid}`);
     // })
@@ -101,5 +101,3 @@ function UserLogin({ setExistingUser, existingUser }) {
 }
 
 export default UserLogin;
-
-//if theres a user, navigate to dashboard

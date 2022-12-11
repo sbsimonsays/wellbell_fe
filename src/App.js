@@ -48,7 +48,10 @@ function App() {
               />
             }
           />
-          <Route path="/signup" element={<SignUp setExistingUser={setExistingUser}/>} />
+          <Route
+            path="/signup"
+            element={<SignUp setExistingUser={setExistingUser} />}
+          />
 
           <Route
             path="/dashboard"
@@ -99,7 +102,6 @@ function App() {
               </Protected>
             }
           />
-          {/* <Notification/> */}
         </Routes>
       </Router>
     </AuthContextProvider>

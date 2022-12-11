@@ -10,7 +10,6 @@ const ProgressBar = ({ progress }) => {
         aria-valuenow={progress}
         aria-valuemin={0}
         aria-valuemax={100}
-        aria-width={progress}
       >
         <span className="label">{`${progress}%`}</span>
       </div>

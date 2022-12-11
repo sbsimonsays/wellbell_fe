@@ -22,6 +22,7 @@ function DashNav({ existingUser, setExistingUser }) {
       }
     }
   }, [user]);
+
   return (
     <div className="dash-nav-main">
       <img onClick={() => navigate("/dashboard")} src={logo} className="logo" />

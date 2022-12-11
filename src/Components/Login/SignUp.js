@@ -135,23 +135,24 @@ function SignUp() {
                 />
 
                 <span className="signup-info">
-                  Select the types of reminders you wish to receive
+                  Select the types of reminders you wish to receive:
                 </span>
                 <div className="signup-checkboxes">
                   <div>
                     <input
                       type="checkbox"
-                      value={newUser.physicalwellness === check ? true : false}
+                      value={newUser.physicalpreferences === check ? true : false}
                       onChange={(e) => setCheck(e.target.checked)}
                       name="physical"
                     />
+                    {console.log(newUser.physicalpreferences)}
                     <label htmlFor="physical">Physical Wellness</label>
                   </div>
                   <div>
                     <input
                       type="checkbox"
                       value={
-                        newUser.nutritionalwellness === check ? true : false
+                        newUser.nutritionalpreferences === check ? true : false
                       }
                       onChange={(e) => setCheck(e.target.checked)}
                       name="nutritional"
@@ -163,7 +164,7 @@ function SignUp() {
                   <div>
                     <input
                       type="checkbox"
-                      value={newUser.mentalwellness === check ? true : false}
+                      value={newUser.mentalpreferences === check ? true : false}
                       onChange={(e) => setCheck(e.target.checked)}
                       name="mental"
                     />
@@ -194,7 +195,6 @@ function SignUp() {
                 </div>
               </>
             )}
-            
           </form>
         </div>
       </div>

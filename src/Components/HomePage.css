@@ -4,6 +4,8 @@
   background-color: #e7dfd8;
   display: flex;
   justify-content: space-between;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .main-right {

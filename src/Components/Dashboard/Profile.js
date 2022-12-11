@@ -5,12 +5,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashNav from "./DashNav";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-
 import yoga from "../../public/yoga-stance.png";
 import salad from "../../public/salad.png";
 import spa from "../../public/spa.png";
 import { retrieveToken } from "../../Firebase/firebase";
-
 import "./Profile.css";
 
 const API = process.env.REACT_APP_API_URL;
@@ -67,18 +65,10 @@ function Profile({ existingUser, setExistingUser }) {
             <div className="user-details">
               <img className="user-photo" src={existingUser.photourl} />
               <div className="details-list">
-                <h5>
-                  First Name: {existingUser.firstname}
-                </h5>
-                <h5>
-                  Last Name: {existingUser.lastname}
-                </h5>
-                <h5>
-                  Username: {existingUser.username}
-                </h5>
-                <h5>
-                  Email: {existingUser.email}
-                </h5>
+                <h5>First Name: {existingUser.firstname}</h5>
+                <h5>Last Name: {existingUser.lastname}</h5>
+                <h5>Username: {existingUser.username}</h5>
+                <h5>Email: {existingUser.email}</h5>
               </div>
             </div>
             <div className="reminder-type-blocks">

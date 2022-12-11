@@ -2,13 +2,11 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import DashNav from "./DashNav";
 import "./About.css";
-
 import jede from "../../public/jede.jpeg";
 import john from "../../public/john.jpeg";
 import kim from "../../public/kim.jpeg";
 import spencer from "../../public/spencer2.jpeg";
 import zane from "../../public/zane3.jpeg";
-
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
@@ -27,6 +25,7 @@ export default function About({ existingUser, setExistingUser }) {
       }
     }
   }, [user]);
+
   return (
     <div className="about-page">
       <DashNav existingUser={existingUser} setExistingUser={setExistingUser} />

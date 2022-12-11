@@ -22,7 +22,6 @@ const Notification = () => {
       notify();
     }
   }, [notification]);
-
   retrieveToken();
 
   onMessageListener()

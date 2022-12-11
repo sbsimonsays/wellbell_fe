@@ -31,8 +31,8 @@ export const AuthContextProvider = ({ children }) => {
   const auth = getAuth();
 
   const createUser = (valuesFromSignUpForm) => {
-       // setUser(valuesFromSignUpForm);
-       // console.log(valuesFromSignUpForm);
+    // setUser(valuesFromSignUpForm);
+    // console.log(valuesFromSignUpForm);
     const { email, password } = valuesFromSignUpForm;
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -111,7 +111,6 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const signIn = async (user) => {
-    
     // console.log(user)
     const { email, password } = user;
     signInWithEmailAndPassword(auth, email, password)
@@ -120,7 +119,6 @@ export const AuthContextProvider = ({ children }) => {
         // Signed in
         const user = userCredential.user;
 
-        
         // ...
       })
       .catch((error) => {
@@ -144,8 +142,6 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     auth.onAuthStateChanged((firebaseUser) => {
       if (firebaseUser) {
-
-    
         // axios
         // .get(`${API}/users/${firebaseUser.uid}`)
         // .then(res =>{
