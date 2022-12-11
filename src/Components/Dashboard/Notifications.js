@@ -7,6 +7,7 @@ import "./Notifications.css";
 import salad from "../../public/salad.png";
 import yoga from "../../public/yoga-stance.png";
 import spa from "../../public/spa.png";
+import Modal from "./Modal";
 
 //add list
 //add button simulates adding to ^list
