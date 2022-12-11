@@ -9,7 +9,9 @@ import pfitness from "../../public/pfitness.png";
 import sephora from "../../public/sephora.jpeg";
 import smartwater from "../../public/smartwater.webp";
 import wholefoods from "../../public/wholefoods.png";
-import ProgressBar from "./ProgressBar";
+import SelfCareProgressBar from "./SelfCareProgressBar";
+import NutritionalProgressBar from "./NutritionalProgressBar";
+import PhysicalProgressBar from "./PhysicalProgressBar";
 import "./Rewards.css";
 
 const API = process.env.REACT_APP_API_URL;
@@ -42,7 +44,7 @@ function Rewards({ existingUser, setExistingUser }) {
       <div className='physical-progress'>
         <div className='progress-info'>
           <h2>Physical Points:</h2>
-      <ProgressBar className= "bar" progress={existingUser.physicalpoints}/>
+      <PhysicalProgressBar className= "physicalbar" progress={existingUser.physicalpoints}/>
       <h5>Points Untill Your Next Reward:</h5>
       <h4>{100 - existingUser.physicalpoints}</h4>
         </div>
@@ -50,7 +52,7 @@ function Rewards({ existingUser, setExistingUser }) {
       <div className='nutritional-progress'>
         <div className='progress-info'>
           <h2>Nutritional Points:</h2>
-      <ProgressBar className="bar" progress={existingUser.nutritionalpoints}/>
+      <NutritionalProgressBar className= "nutritionalbar" progress={existingUser.nutritionalpoints}/>
       <h5>Points Untill Your Next Reward:</h5>
       <h4>{100 - existingUser.nutritionalpoints}</h4>
         </div>
@@ -58,7 +60,7 @@ function Rewards({ existingUser, setExistingUser }) {
       <div className='self-care-progress'>
         <div className='progress-info'>
           <h2>Self-Care Points:</h2>
-      <ProgressBar className="bar" progress={existingUser.selfcarepoints}/>
+      <SelfCareProgressBar className= "selfcarebar" progress={existingUser.selfcarepoints}/>
       <h5>Points Untill Your Next Reward:</h5>
       <h4>{100 - existingUser.selfcarepoints}</h4>
         </div>

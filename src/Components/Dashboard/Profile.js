@@ -108,7 +108,7 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-nutrition"
-                  value={
+                  className={
                     existingUser.nutritionalpreferences === true
                       ? "solid"
                       : "transparent"
