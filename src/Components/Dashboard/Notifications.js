@@ -119,7 +119,7 @@ function Notifications({ existingUser, setExistingUser }) {
                   <img alt="nutritional-img" src={salad} />
                 </div>
                 <div className="type-text">
-                  <h6 className="completed">Complete</h6>
+                  <h6 className="complete">Complete</h6>
                   <h2>Reach for a Healthy Treat</h2>
                   <h4>Sugarly snacks increase your risk for diabetes</h4>
                 </div>
@@ -133,7 +133,7 @@ function Notifications({ existingUser, setExistingUser }) {
                   <img alt="physical-img" src={yoga} />
                 </div>
                 <div className="type-text">
-                  <h6 className="completed">Complete</h6>
+                  <h6 className="complete">Complete</h6>
                   <h2>Stand Up and Stretch Your Body</h2>
                   <h4>Stretching increases blood flow to your muscles</h4>
                 </div>
