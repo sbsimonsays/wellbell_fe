@@ -76,7 +76,9 @@ function Profile({ existingUser, setExistingUser }) {
       }
     }
   }, [user]);
-
+  Chart.defaults.font.size = 17;
+  Chart.defaults.font.family = 'DM Sans, sans-serif';
+  Chart.defaults.borderColor = 'rgba(0, 0, 0, 0.561)'
   const data = {
     labels: ["Physical", "Nutritional", "Self-Care"],
     datasets: [
@@ -96,24 +98,25 @@ function Profile({ existingUser, setExistingUser }) {
       <div className="profile-main">
         <div className="profile-title">
           <h1>{existingUser.firstname}'s Profile</h1>
-          {console.log(existingUser)}
         </div>
+      <div className="profile-info">
+
         <div className="user-info">
           <div className="user-profile-left">
             <div className="user-details">
               <img className="user-photo" src={existingUser.photourl} />
               <div className="details-list">
-                <h5>
-                  First Name: {existingUser.firstname}
+                <h5 >
+                 <b>First Name:</b>  {existingUser.firstname}
                 </h5>
                 <h5>
-                  Last Name: {existingUser.lastname}
+                  <b>Last Name:</b> {existingUser.lastname}
                 </h5>
                 <h5>
-                  Username: {existingUser.username}
+                  <b>Username:</b> {existingUser.username}
                 </h5>
                 <h5>
-                  Email: {existingUser.email}
+                  <b>Email:</b> {existingUser.email}
                 </h5>
               </div>
             </div>
@@ -124,10 +127,10 @@ function Profile({ existingUser, setExistingUser }) {
                   id="reminder-physical"
                   className={
                     existingUser.physicalpreferences === true
-                      ? "solid"
-                      : "transparent"
+                    ? "solid"
+                    : "transparent"
                   }
-                >
+                  >
                   <h5>Physical</h5>
                   <img className="physical" alt="self-care-img" src={yoga} />
                 </div>
@@ -135,10 +138,10 @@ function Profile({ existingUser, setExistingUser }) {
                   id="reminder-self-care"
                   className={
                     existingUser.mentalpreferences === true
-                      ? "solid"
-                      : "transparent"
+                    ? "solid"
+                    : "transparent"
                   }
-                >
+                  >
                   <h5>Self-Care</h5>
                   <img className="selfcare" alt="self-care-img" src={spa} />
                 </div>
@@ -146,16 +149,16 @@ function Profile({ existingUser, setExistingUser }) {
                   id="reminder-nutrition"
                   className={
                     existingUser.nutritionalpreferences === true
-                      ? "solid"
-                      : "transparent"
+                    ? "solid"
+                    : "transparent"
                   }
-                >
+                  >
                   <h5>Nutritional</h5>
                   <img
                     className="nutritional"
                     alt="self-care-img"
                     src={salad}
-                  />
+                    />
                 </div>
               </div>
             </div>
@@ -164,18 +167,19 @@ function Profile({ existingUser, setExistingUser }) {
         <div className="points-bars">
         <Bar type="bar"
       width={130}
-      height={50}
+      height={65}
       options={{
         title: {
           display: true,
           text: "Wellness Points",
-          fontSize: 15
+         
         },
         legend: {
           display: true, //Is the legend shown?
           position: "top" //Position of the legend.
         }
       }} data={data}/>
+      </div>
         </div>
       </div>
     </div>

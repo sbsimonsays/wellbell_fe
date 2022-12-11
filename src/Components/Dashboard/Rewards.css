@@ -114,7 +114,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
 }
 
 .partner-circles-text {
@@ -126,8 +125,8 @@
 .partner-images {
   display: flex;
   flex: 1;
-  margin-top: -350px;
-  margin-left: 260px;
+  margin-top: -450px;
+  margin-left: 300px;
   justify-content: center;
 }
 
