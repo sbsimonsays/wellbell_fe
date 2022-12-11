@@ -1,37 +1,36 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
+
 admin.initializeApp();
 
 //http request method
 exports.sendNotification = functions.https.onRequest((req, res) => {
-  const FCMToken = req.body; //get params like this
+  const FCMToken = req.query.token; //get params like this
 
-  console.log("REQUEST DOT BODY !!!!!!", req.body);
+  console.log("REQUEST DOT BODY !!!!!!", req.query);
 
-  let dummyToken = "ccYjMRosn_0Ii75pYvrKux:APA91bEUuR72NUteeUFKcDVUkg-HAkAAyZfTKg1CB5wLimljm47GaHzdZDe1fTm3Xu8Vmzq_obyploPG7R3LECQiha8sdzU8tuu3LM1eD0b9M-j-5alLMAHqgec6-bgw-8bApMPhidIL";
+  let dummyToken = "ei1tJR160DHaoiG0YWJTJ5:APA91bHs6w09mysbVuMfcfpJ060PjLO12S2IfOvPErmzru1DmQKsGz4y0DGa0dCiVSm38szjj8DlTD3wJJMc7CFlcICQATGay7amyUC2FYGbQ7JLI8DnBLAtCe5m2h0n6Ffxk1FWl1XN";
 
-  let message = "this is a message";
+let message = "Drink some Water!!";
 
 const payload = {
-  token: dummyToken,
   notification: {
-    title: "cloud function demo",
+    title: "Physical Well Bell!",
     body: message,
   },
-  data: {
-    body: message,
-  },
+
 };
 
 admin
   .messaging()
-  .send(payload)
+  .sendToDevice(dummyToken, payload)
   .then((response) => {
     // Response is a message ID string.
     console.log("Successfully sent message:", response);
-    return { success: true };
+    res.send({ success: response }) ;
   })
   .catch((error) => {
+    console.log(error)
     return { error: error.code };
   });
 });

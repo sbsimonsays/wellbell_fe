@@ -21,6 +21,7 @@ const app = initializeApp(firebaseConfig);
 //messaging
 const messaging = getMessaging(app);
 
+
 export const retrieveToken = () => {
 
   return getToken(messaging, {
