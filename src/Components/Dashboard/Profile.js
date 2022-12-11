@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashNav from "./DashNav";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { onMessageListener } from "../../Firebase/firebase";
 
 import yoga from "../../public/yoga-stance.png";
 import salad from "../../public/salad.png";
@@ -14,21 +15,38 @@ import { retrieveToken } from "../../Firebase/firebase";
 import "./Profile.css";
 
 const API = process.env.REACT_APP_API_URL;
-const messagingAPI = process.env.REACT_APP_MESSAGING_API_URL;
+
+const messagingAPI = "https://us-central1-wellbell-4a40d.cloudfunctions.net/sendNotification";
+// const testingAPI = process.env.REACT_APP_TESTING_API_URL;
+
 
 function Profile({ existingUser, setExistingUser }) {
   const [userPreferences, setUserPreferences] = useState(null);
+  const [show, setShow] =useState(false)
   const { user } = useContext(AuthContext);
   const [FCMToken, setFCMToken] = useState(null);
   const messaging = getMessaging();
   const navigate = useNavigate();
 
+  onMessageListener().then(payload => {
+    setShow(true);
+    alert(payload.notification.body);
+  }).catch(err => console.log('failed: ', err));
+
   const handleClick = () => {
-    const payload = {
-      FCMToken: FCMToken,
+
+    const message = {
+      data: {
+        score: "850",
+        time: "2:45",
+      },
+      token: FCMToken,
     };
+    console.log(FCMToken)
     axios
-      .get(`${messagingAPI}?FCMToken=${FCMToken}`)
+      .get(`${messagingAPI}?token=${FCMToken}`)
+      // .get(`${testingAPI}?token=${FCMToken}` )
+
       .then((res) => {
         console.log(res);
       })
@@ -43,7 +61,9 @@ function Profile({ existingUser, setExistingUser }) {
       navigate("/login");
     } else {
       retrieveToken().then((res) => {
-        console.log(setFCMToken(res));
+
+        setFCMToken(res);
+
       });
 
       if (!existingUser.email) {
