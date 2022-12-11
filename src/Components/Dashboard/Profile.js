@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashNav from "./DashNav";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { onMessageListener } from "../../Firebase/firebase";
 
 import yoga from "../../public/yoga-stance.png";
 import salad from "../../public/salad.png";
@@ -16,41 +17,59 @@ import { Bar } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 
 
-const API = process.env.REACT_APP_API_URL
-const messagingAPI = process.env.REACT_APP_MESSAGING_API_URL
+const API = process.env.REACT_APP_API_URL;
+
+const messagingAPI = "https://us-central1-wellbell-4a40d.cloudfunctions.net/sendNotification";
+// const testingAPI = process.env.REACT_APP_TESTING_API_URL;
+
 
 function Profile({ existingUser, setExistingUser }) {
   const [userPreferences, setUserPreferences] = useState(null);
+  const [show, setShow] =useState(false)
   const { user } = useContext(AuthContext);
   const [FCMToken, setFCMToken] = useState(null);
   const messaging = getMessaging();
   const navigate = useNavigate();
 
+  onMessageListener().then(payload => {
+    setShow(true);
+    alert(payload.notification.body);
+  }).catch(err => console.log('failed: ', err));
+
   const handleClick = () => {
-    const payload = {
-      FCMToken:FCMToken
-    }
+
+    const message = {
+      data: {
+        score: "850",
+        time: "2:45",
+      },
+      token: FCMToken,
+    };
+    console.log(FCMToken)
     axios
-    .get(`${messagingAPI}?FCMToken=${FCMToken}`)
-    .then(res => {
-      console.log(res)
-    })
-    .catch(e =>{
-      console.log(e)
-    })
-  }
+      .get(`${messagingAPI}?token=${FCMToken}`)
+      // .get(`${testingAPI}?token=${FCMToken}` )
+
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   useEffect(() => {
     if (!user) {
       alert("No user, re-routing to the login page!");
       navigate("/login");
     } else {
-     retrieveToken()
-     .then(res => {
-      console.log(setFCMToken(res))
-     })
-   
-    if (!existingUser.email) {
+      retrieveToken().then((res) => {
+
+        setFCMToken(res);
+
+      });
+
+      if (!existingUser.email) {
         axios
           .get(`${API}/users/${user.uid}`)
           .then((res) => setExistingUser(res.data.payload));
@@ -77,26 +96,24 @@ function Profile({ existingUser, setExistingUser }) {
       <div className="profile-main">
         <div className="profile-title">
           <h1>{existingUser.firstname}'s Profile</h1>
+          {console.log(existingUser)}
         </div>
         <div className="user-info">
           <div className="user-profile-left">
             <div className="user-details">
-              <img
-                className="user-photo"
-                src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg"
-              />
+              <img className="user-photo" src={existingUser.photourl} />
               <div className="details-list">
                 <h5>
-                  First Name: {""} {existingUser.firstname}
+                  First Name: {existingUser.firstname}
                 </h5>
                 <h5>
-                  Last Name: {""} {existingUser.lastname}
+                  Last Name: {existingUser.lastname}
                 </h5>
                 <h5>
-                  Username: {""} {existingUser.username}
+                  Username: {existingUser.username}
                 </h5>
                 <h5>
-                  Email: {""} {existingUser.email}
+                  Email: {existingUser.email}
                 </h5>
               </div>
             </div>
@@ -105,7 +122,7 @@ function Profile({ existingUser, setExistingUser }) {
               <div className="reminder-cards">
                 <div
                   id="reminder-physical"
-                  value={
+                  className={
                     existingUser.physicalpreferences === true
                       ? "solid"
                       : "transparent"
@@ -116,7 +133,7 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-self-care"
-                  value={
+                  className={
                     existingUser.mentalpreferences === true
                       ? "solid"
                       : "transparent"
@@ -127,13 +144,12 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-nutrition"
-                  value={
+                  className={
                     existingUser.nutritionalpreferences === true
                       ? "solid"
                       : "transparent"
                   }
                 >
-                  <button onClick={handleClick}>click here</button>
                   <h5>Nutritional</h5>
                   <img
                     className="nutritional"

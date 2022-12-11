@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import bbandb from "../../public/bbandb.png";
 import cliffbar from "../../public/cliffbar.png";
-import planetfitness from "../../public/planetfitness.png";
+import pfitness from "../../public/pfitness.png";
 import sephora from "../../public/sephora.jpeg";
 import smartwater from "../../public/smartwater.webp";
 import wholefoods from "../../public/wholefoods.png";
-import ProgressBar from "./ProgressBar";
+import SelfCareProgressBar from "./SelfCareProgressBar";
+import NutritionalProgressBar from "./NutritionalProgressBar";
+import PhysicalProgressBar from "./PhysicalProgressBar";
 import "./Rewards.css";
 
 const API = process.env.REACT_APP_API_URL;
@@ -42,25 +44,25 @@ function Rewards({ existingUser, setExistingUser }) {
       <div className='physical-progress'>
         <div className='progress-info'>
           <h2>Physical Points:</h2>
-      <ProgressBar className= "bar" progress={50}/>
+      <PhysicalProgressBar className= "physicalbar" progress={existingUser.physicalpoints}/>
       <h5>Points Untill Your Next Reward:</h5>
-      <h4>50</h4>
+      <h4>{100 - existingUser.physicalpoints}</h4>
         </div>
       </div>
       <div className='nutritional-progress'>
         <div className='progress-info'>
           <h2>Nutritional Points:</h2>
-      <ProgressBar className="bar" progress={50}/>
+      <NutritionalProgressBar className= "nutritionalbar" progress={existingUser.nutritionalpoints}/>
       <h5>Points Untill Your Next Reward:</h5>
-      <h4>50</h4>
+      <h4>{100 - existingUser.nutritionalpoints}</h4>
         </div>
       </div>
       <div className='self-care-progress'>
         <div className='progress-info'>
           <h2>Self-Care Points:</h2>
-      <ProgressBar className="bar" progress={50}/>
+      <SelfCareProgressBar className= "selfcarebar" progress={existingUser.selfcarepoints}/>
       <h5>Points Untill Your Next Reward:</h5>
-      <h4>50</h4>
+      <h4>{100 - existingUser.selfcarepoints}</h4>
         </div>
       </div>
     </div>
@@ -74,7 +76,7 @@ function Rewards({ existingUser, setExistingUser }) {
   <div className='partner-images'>
 <img className='partner-logo' src={bbandb}/>
 <img className='partner-logo' src={cliffbar}/>
-<img className='partner-logo' src={planetfitness}/>
+<img className='partner-logo' src={pfitness}/>
 <img className='partner-logo' src={smartwater}/>
 <img className='partner-logo' src={sephora}/>
 <img className='partner-logo' src={wholefoods}/>
