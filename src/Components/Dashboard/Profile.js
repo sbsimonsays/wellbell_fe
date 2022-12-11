@@ -13,6 +13,9 @@ import spa from "../../public/spa.png";
 import { retrieveToken } from "../../Firebase/firebase";
 
 import "./Profile.css";
+import { Bar } from "react-chartjs-2";
+import Chart from 'chart.js/auto';
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -73,6 +76,19 @@ function Profile({ existingUser, setExistingUser }) {
       }
     }
   }, [user]);
+
+  const data = {
+    labels: ["Physical", "Nutritional", "Self-Care"],
+    datasets: [
+     
+      {
+        data: [existingUser.physicalpoints,existingUser.nutritionalpoints,existingUser.selfcarepoints],
+        label: "Wellness Points",
+        borderColor: "#ff3333",
+        backgroundColor: "#6ce5e8",
+        fill: true
+      }
+    ]}
 
   return (
     <div className="profile-page">
@@ -145,7 +161,22 @@ function Profile({ existingUser, setExistingUser }) {
             </div>
           </div>
         </div>
-        <div className="points-bars"></div>
+        <div className="points-bars">
+        <Bar type="bar"
+      width={130}
+      height={50}
+      options={{
+        title: {
+          display: true,
+          text: "Wellness Points",
+          fontSize: 15
+        },
+        legend: {
+          display: true, //Is the legend shown?
+          position: "top" //Position of the legend.
+        }
+      }} data={data}/>
+        </div>
       </div>
     </div>
   );
