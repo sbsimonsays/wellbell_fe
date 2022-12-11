@@ -15,8 +15,10 @@ import { retrieveToken } from "../../Firebase/firebase";
 import "./Profile.css";
 
 const API = process.env.REACT_APP_API_URL;
+
 const messagingAPI = "https://us-central1-wellbell-4a40d.cloudfunctions.net/sendNotification";
 // const testingAPI = process.env.REACT_APP_TESTING_API_URL;
+
 
 function Profile({ existingUser, setExistingUser }) {
   const [userPreferences, setUserPreferences] = useState(null);
@@ -32,6 +34,7 @@ function Profile({ existingUser, setExistingUser }) {
   }).catch(err => console.log('failed: ', err));
 
   const handleClick = () => {
+
     const message = {
       data: {
         score: "850",
@@ -43,6 +46,7 @@ function Profile({ existingUser, setExistingUser }) {
     axios
       .get(`${messagingAPI}?token=${FCMToken}`)
       // .get(`${testingAPI}?token=${FCMToken}` )
+
       .then((res) => {
         console.log(res);
       })
@@ -57,7 +61,9 @@ function Profile({ existingUser, setExistingUser }) {
       navigate("/login");
     } else {
       retrieveToken().then((res) => {
+
         setFCMToken(res);
+
       });
 
       if (!existingUser.email) {
@@ -74,26 +80,24 @@ function Profile({ existingUser, setExistingUser }) {
       <div className="profile-main">
         <div className="profile-title">
           <h1>{existingUser.firstname}'s Profile</h1>
+          {console.log(existingUser)}
         </div>
         <div className="user-info">
           <div className="user-profile-left">
             <div className="user-details">
-              <img
-                className="user-photo"
-                src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg"
-              />
+              <img className="user-photo" src={existingUser.photourl} />
               <div className="details-list">
                 <h5>
-                  First Name: {""} {existingUser.firstname}
+                  First Name: {existingUser.firstname}
                 </h5>
                 <h5>
-                  Last Name: {""} {existingUser.lastname}
+                  Last Name: {existingUser.lastname}
                 </h5>
                 <h5>
-                  Username: {""} {existingUser.username}
+                  Username: {existingUser.username}
                 </h5>
                 <h5>
-                  Email: {""} {existingUser.email}
+                  Email: {existingUser.email}
                 </h5>
               </div>
             </div>
@@ -102,7 +106,7 @@ function Profile({ existingUser, setExistingUser }) {
               <div className="reminder-cards">
                 <div
                   id="reminder-physical"
-                  value={
+                  className={
                     existingUser.physicalpreferences === true
                       ? "solid"
                       : "transparent"
@@ -113,7 +117,7 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-self-care"
-                  value={
+                  className={
                     existingUser.mentalpreferences === true
                       ? "solid"
                       : "transparent"
@@ -124,13 +128,12 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
                 <div
                   id="reminder-nutrition"
-                  value={
+                  className={
                     existingUser.nutritionalpreferences === true
                       ? "solid"
                       : "transparent"
                   }
                 >
-                  <button onClick={handleClick}>click here</button>
                   <h5>Nutritional</h5>
                   <img
                     className="nutritional"
