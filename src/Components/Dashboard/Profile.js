@@ -125,7 +125,8 @@ function Profile({ existingUser, setExistingUser }) {
             </div>
           </div>
         </div>
-        <div className="points-bars"></div>
+        <div className="points-bars">
+        </div>
       </div>
     </div>
   );
