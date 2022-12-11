@@ -23,12 +23,19 @@ function Profile({ existingUser, setExistingUser }) {
   const messaging = getMessaging();
   const navigate = useNavigate();
 
+const messagingAPI = process.env.REACT_APP_MESSAGING_API_URL;
+
   const handleClick = () => {
-    const payload = {
-      FCMToken:FCMToken
-    }
+    const message = {
+      data: {
+        score: '850',
+        time: '2:45'
+      },
+      token: FCMToken
+    };
+    
     axios
-    .get(`${messagingAPI}?FCMToken=${FCMToken}`)
+    .post(`${messagingAPI}`, message)
     .then(res => {
       console.log(res)
     })
