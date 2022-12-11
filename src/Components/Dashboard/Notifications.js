@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DashNav from "./DashNav";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,9 @@ const API = process.env.REACT_APP_API_URL;
 function Notifications({ existingUser, setExistingUser }) {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const [bells, setBells] = useState([]);
+
   useEffect(() => {
     if (!user) {
       alert("No user, re-routing to the login page!");
@@ -26,8 +29,29 @@ function Notifications({ existingUser, setExistingUser }) {
           .get(`${API}/users/${user.uid}`)
           .then((res) => setExistingUser(res.data.payload));
       }
-    }
-  }, [user]);
+    };
+
+    axios
+      .get(`${API}/bells`)
+      .then((res) => {
+        setBells(res.data.payload);
+        console.log(bells);
+      })
+      .catch((err) => console.err);
+  }, [user], [bells]);
+
+  // useEffect(() => {
+  //   if (!user) {
+  //     alert("No user, re-routing to the login page!");
+  //     navigate("/login");
+  //   } else {
+  //     if (!existingUser) {
+  //       axios
+  //         .get(`${API}/users/${user.uid}`)
+  //         .then((res) => setExistingUser(res.data.payload));
+  //     }
+  //   }
+  // }, [user]);
 
   return (
     <div className="bells-page">
@@ -35,6 +59,7 @@ function Notifications({ existingUser, setExistingUser }) {
       <div className="bells-main">
         <div className="bells-title">
           <h1>{existingUser.firstname}'s Recent WellBells</h1>
+          {console.log(bells)}
         </div>
         <div className="recent-bells">
           <div className="bells-left">
