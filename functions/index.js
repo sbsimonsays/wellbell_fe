@@ -5,24 +5,42 @@ admin.initializeApp();
 
 //http request method
 exports.sendNotification = functions.https.onRequest((req, res) => {
+  
+
   const FCMToken = req.query.token; //get params like this
 
-  console.log("REQUEST DOT BODY !!!!!!", req.query);
+  console.log(req.query.token);
 
 
-let message = "yo people can write mad scripts!";
+let message = "Reach for a Healthy Snack!";
 
 const payload = {
+  // topic:"subscriber-bells",
+  token:FCMToken,
   notification: {
-    title: "Have a snacky space-time 5:23!",
-    body: message,
+    title: "Reach for a Healthy Snack!",
+    body: message
   },
+  data : {
+    volume : "3.21.15",
+    contents : "http://www.news-magazine.com/world-week/21659772"
+  },
+
+  // {
+  //   "message":{
+  //     "token":"bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...",
+  //     "notification":{
+  //       "title":"Portugal vs. Denmark",
+  //       "body":"great match!"
+  //     }
+  //   }
+  // }
 
 };
 
 admin
   .messaging()
-  .sendToDevice(FCMToken, payload)
+  .send(payload)
   .then((response) => {
     // Response is a message ID string.
     console.log("Successfully sent message:", response);
