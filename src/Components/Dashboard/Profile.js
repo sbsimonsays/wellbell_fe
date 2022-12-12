@@ -21,11 +21,12 @@ import Modal from "./Modal";
 const API = process.env.REACT_APP_API_URL;
 
 const messagingAPI = "https://us-central1-wellbell-4a40d.cloudfunctions.net/sendNotification";
-// const testingAPI = process.env.REACT_APP_TESTING_API_URL;
+const testingAPI = process.env.REACT_APP_TESTING_API_URL;
 
 
 function Profile({ existingUser, setExistingUser }) {
   const [userPreferences, setUserPreferences] = useState(null);
+  const [message, setMessage] = useState(null);
   const [show, setShow] =useState(false)
   const { user } = useContext(AuthContext);
   const [FCMToken, setFCMToken] = useState(null);
@@ -35,21 +36,14 @@ function Profile({ existingUser, setExistingUser }) {
   onMessageListener().then(payload => {
     setShow(true);
     alert(payload.notification.body);
+    setMessage(payload.notification.body);
   }).catch(err => console.log('failed: ', err));
 
   const handleClick = () => {
-
-    const message = {
-      data: {
-        score: "850",
-        time: "2:45",
-      },
-      token: FCMToken,
-    };
-    console.log(FCMToken)
+    
     axios
-      .get(`${messagingAPI}?token=${FCMToken}`)
-      // .get(`${testingAPI}?token=${FCMToken}` )
+      // .get(`${messagingAPI}?token=${FCMToken}`)
+      .get(`${testingAPI}?token=${FCMToken}` )
 
       .then((res) => {
         console.log(res);
@@ -77,9 +71,11 @@ function Profile({ existingUser, setExistingUser }) {
       }
     }
   }, [user]);
+
   Chart.defaults.font.size = 17;
   Chart.defaults.font.family = 'DM Sans, sans-serif';
   Chart.defaults.borderColor = 'rgba(0, 0, 0, 0.561)'
+  
   const data = {
     labels: ["Physical", "Nutritional", "Self-Care"],
     datasets: [
@@ -124,7 +120,7 @@ function Profile({ existingUser, setExistingUser }) {
             <div className="reminder-type-blocks">
               <h2>Your WellBell Preferences</h2>
               <div className="reminder-cards">
-                <div
+                <div onClick={handleClick}
                   id="reminder-physical"
                   className={
                     existingUser.physicalpreferences === true
@@ -166,7 +162,7 @@ function Profile({ existingUser, setExistingUser }) {
           </div>
         </div>
         <div className="points-bars">
-        <Modal/>
+        <Modal message={message}/>
         <Bar type="bar"
       width={130}
       height={65}

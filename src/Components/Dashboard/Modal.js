@@ -2,12 +2,13 @@ import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../Dashboard/Modal.css";
-export default function Modal() {
+export default function Modal({message}) {
+  
   const showToast = () => {
-    toast("Reach for a Healthy Treat!",  {
+    toast(message,  {
         icon: "🔔 ",
       data: {
-        title: "Reach for a Healthy Treat!",
+        title: message,
         text: "We are here again with another article",
       },
     });
