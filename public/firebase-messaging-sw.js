@@ -1,4 +1,4 @@
-// Scripts for firebase and firebase messaging
+
 importScripts('https://www.gstatic.com/firebasejs/9.1.0/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/9.1.0/firebase-messaging-compat.js');
 // import { initializeApp } from "firebase/app";
@@ -25,10 +25,7 @@ messaging.onMessageReceived((payload) => {
   return true;
   // ...
 });
-// Notification.requestPermission().then((permission) => {
-//   if (permission === "granted") {
-//     console.log("Notification permission granted.");
-//   }})
+
 messaging.onBackgroundMessage(function(payload) {
   console.log('Received background message ', payload);
  // Customize notification here

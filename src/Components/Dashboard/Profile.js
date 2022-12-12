@@ -15,6 +15,7 @@ import { retrieveToken } from "../../Firebase/firebase";
 import "./Profile.css";
 
 const API = process.env.REACT_APP_API_URL;
+
 const messagingAPI = "https://us-central1-wellbell-4a40d.cloudfunctions.net/sendNotification";
 // const testingAPI = process.env.REACT_APP_TESTING_API_URL;
 

@@ -9,13 +9,13 @@ exports.sendNotification = functions.https.onRequest((req, res) => {
 
   console.log("REQUEST DOT BODY !!!!!!", req.query);
 
-  let dummyToken = "ei1tJR160DHaoiG0YWJTJ5:APA91bHs6w09mysbVuMfcfpJ060PjLO12S2IfOvPErmzru1DmQKsGz4y0DGa0dCiVSm38szjj8DlTD3wJJMc7CFlcICQATGay7amyUC2FYGbQ7JLI8DnBLAtCe5m2h0n6Ffxk1FWl1XN";
+  let dummyToken = "dUkJPqA3s8bcrzJLPMTU6I:APA91bFCe1EHhugii8lNS6QGakqgbGvWMlC8HMOo2WtS5zUmHaJuPMOPcytld8Yr5XeyAxbO63D_WkvOsXYdyB1H2ZFNxv00CrgcHrEiGoB7HTC2qScADVmchrClfpWMPwhaZIoltwLw";
 
-let message = "Drink some Water!!";
+let message = "Nutritional WellBell!!";
 
 const payload = {
   notification: {
-    title: "Physical Well Bell!",
+    title: "Have a snacky -time 5:23!",
     body: message,
   },
 
