@@ -12,13 +12,13 @@ exports.sendNotification = functions.https.onRequest((req, res) => {
   console.log(req.query.token);
 
 
-let message = "Snacks are yumm";
+let message = "Reach for a Healthy Snack!";
 
 const payload = {
   // topic:"subscriber-bells",
   token:FCMToken,
   notification: {
-    title: "Have a snacky!",
+    title: "Reach for a Healthy Snack!",
     body: message
   },
   data : {
