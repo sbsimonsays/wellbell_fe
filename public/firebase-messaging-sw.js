@@ -20,11 +20,7 @@ firebase.initializeApp( {
 // Retrieve firebase messaging
 const messaging = firebase.messaging()
 
-messaging.onMessageReceived((payload) => {
-  console.log('Message received. ', payload);
-  return true;
-  // ...
-});
+
 // Notification.requestPermission().then((permission) => {
 //   if (permission === "granted") {
 //     console.log("Notification permission granted.");
