@@ -9,13 +9,12 @@ exports.sendNotification = functions.https.onRequest((req, res) => {
 
   console.log("REQUEST DOT BODY !!!!!!", req.query);
 
-  let dummyToken = "ei1tJR160DHaoiG0YWJTJ5:APA91bHs6w09mysbVuMfcfpJ060PjLO12S2IfOvPErmzru1DmQKsGz4y0DGa0dCiVSm38szjj8DlTD3wJJMc7CFlcICQATGay7amyUC2FYGbQ7JLI8DnBLAtCe5m2h0n6Ffxk1FWl1XN";
 
-let message = "Drink some Water!!";
+let message = "yo people can write mad scripts!";
 
 const payload = {
   notification: {
-    title: "Physical Well Bell!",
+    title: "Have a snacky space-time 5:23!",
     body: message,
   },
 
@@ -23,7 +22,7 @@ const payload = {
 
 admin
   .messaging()
-  .sendToDevice(dummyToken, payload)
+  .sendToDevice(FCMToken, payload)
   .then((response) => {
     // Response is a message ID string.
     console.log("Successfully sent message:", response);
