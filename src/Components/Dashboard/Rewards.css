@@ -137,3 +137,11 @@
   padding: 5px;
 }
 
+.Toastify__toast-container{
+  width: 400px;
+  font-family: "DM Sans, san-serif";
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+
+}

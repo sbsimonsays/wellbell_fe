@@ -74,6 +74,8 @@ function Profile({ existingUser, setExistingUser }) {
         text: "We are here again with another article",
       },
     });
+    const audio = new Audio('https://drive.google.com/uc?export=download&id=1M95VOpto1cQ4FQHzNBaLf0WFQglrtWi7');
+    audio.play();
   };
 
   useEffect(() => {
@@ -142,7 +144,7 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
               </div>
               <div>
-                <ToastContainer position="top-center" />
+                <ToastContainer position="top-center" className='Toastify__toast-container' />
               </div>
               <div className="reminder-type-blocks">
                 <h2>Your WellBell Preferences</h2>
