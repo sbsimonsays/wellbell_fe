@@ -146,7 +146,7 @@ function Notifications({ existingUser, setExistingUser }) {
                 <div className="type-text">
                   <h6 className="incomplete">Incomplete</h6>
                   <h2>Take your Multi-Vitamins</h2>
-                  <h4>Vitamin D can be produced in the skin from the sun’s energy.</h4>
+                  <h4>Vitamin D can be produced in the skin from the sun’s energy</h4>
                 </div>
               </div>
               <div className="single-bell-right-three">
@@ -154,9 +154,10 @@ function Notifications({ existingUser, setExistingUser }) {
                   <img alt="physical-img" src={yoga} />
                 </div>
                 <div className="type-text">
-                  <h6 className="incomplete">Incomplete</h6>
-                  <h2>Check Your Posture</h2>
-                  <h4>Good posture allows for easier breathing.</h4>
+                  <h6 className="complete">Complete</h6>
+                  <h2>Take One Deep Belly Breath!</h2>
+                  <h4>Belly breathing stimulates the relaxation response </h4>
+                    <h4>targeting your parasympathetic nervous system</h4>
                 </div>
               </div>
             </div>

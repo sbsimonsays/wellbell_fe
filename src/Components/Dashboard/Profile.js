@@ -49,17 +49,33 @@ function Profile({ existingUser, setExistingUser }) {
     })
     .catch((err) => console.log("failed: ", err));
 
-  const handleClick = () => {
-    axios
-      // .get(`${messagingAPI}?token=${FCMToken}`)
-      .get(`${testingAPI}?token=${FCMToken}`)
+  // const handleClick = (event) => {
+  //   // axios
+  //   //   // .get(`${messagingAPI}?token=${FCMToken}`)
+  //   //   .get(`${testingAPI}?token=${FCMToken}`)
 
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+  //   //   .then((res) => {
+  //   //     console.log(res);
+  //   //   })
+  //   //   .catch((e) => {
+  //   //     console.log(e);
+  //   //   });
+  //   event.preventDefault()
+  //   onMessageListener()
+  // };
+  
+  const showToast = () => {
+    toast("Reach for a Healthy Treat!"
+,  {
+        icon: "🔔 ",
+      data: {
+        title: "Reach for a Healthy Treat!"
+,
+        text: "We are here again with another article",
+      },
+    });
+    const audio = new Audio('https://drive.google.com/uc?export=download&id=1M95VOpto1cQ4FQHzNBaLf0WFQglrtWi7');
+    audio.play();
   };
 
   useEffect(() => {
@@ -128,13 +144,13 @@ function Profile({ existingUser, setExistingUser }) {
                 </div>
               </div>
               <div>
-                <ToastContainer position="top-center" />
+                <ToastContainer position="top-center" className='Toastify__toast-container' />
               </div>
               <div className="reminder-type-blocks">
                 <h2>Your WellBell Preferences</h2>
                 <div className="reminder-cards">
                   <div
-                    onClick={handleClick}
+                    onClick={showToast}
                     id="reminder-physical"
                     className={
                       existingUser.physicalpreferences === true
