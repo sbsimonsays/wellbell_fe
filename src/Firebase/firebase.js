@@ -6,13 +6,13 @@ import { getAuth } from "firebase/auth";
 // Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCtYb0I4aPnZKPbB4bbQ0VB7rpHZqha06s",
-  authDomain: "wellbell-4a40d.firebaseapp.com",
-  projectId: "wellbell-4a40d",
-  storageBucket: "wellbell-4a40d.appspot.com",
-  messagingSenderId: "33154837166",
-  appId: "1:33154837166:web:cffc47a7ec9154036edb3f",
-  measurementId: "G-5YXH5XPXZ7",
+  apiKey: "AIzaSyAcbAgHcLYHOuMElmDL-Fh2GxG2EdjizeY",
+  authDomain: "wellbell-fe767.firebaseapp.com",
+  projectId: "wellbell-fe767",
+  storageBucket: "wellbell-fe767.appspot.com",
+  messagingSenderId: "241475391234",
+  appId: "1:241475391234:web:8bba110c6ced34f3a13c1b",
+  measurementId: "G-0S78BRPC6T",
 };
 
 // Initialize Firebase
@@ -21,14 +21,12 @@ const app = initializeApp(firebaseConfig);
 //messaging
 const messaging = getMessaging(app);
 
-
 export const retrieveToken = () => {
-
   return getToken(messaging, {
     vapidKey:
       "BP2vnUBO-X6Aw6KNtsS9Pst64XUuK_Pdscd70wrrylC_-g-oGW7nABQ6P-Mdr32jBL8isvGGB4Hn2MSb73DzwVk",
   })
-    .then((currentToken) => { 
+    .then((currentToken) => {
       if (currentToken) {
         console.log("current token for client: ", currentToken);
         return currentToken;

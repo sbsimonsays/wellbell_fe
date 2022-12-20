@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import ".././Dashboard/SelfCareProgressBar.css";
 
 export default function SelfCareProgressBar({ progress }) {
@@ -6,7 +6,7 @@ export default function SelfCareProgressBar({ progress }) {
     <div className="container">
       <div
         className="sbar"
-        style={{width: `${progress}%`}}
+        style={{ width: `${progress}%` }}
         role="progressbar"
         aria-valuenow={progress}
         aria-valuemin={0}
@@ -16,5 +16,5 @@ export default function SelfCareProgressBar({ progress }) {
         <span className="label">{`${progress}%`}</span>
       </div>
     </div>
-  )
+  );
 }

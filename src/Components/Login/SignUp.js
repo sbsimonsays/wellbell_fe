@@ -194,7 +194,6 @@ function SignUp() {
                 </div>
               </>
             )}
-            
           </form>
         </div>
       </div>

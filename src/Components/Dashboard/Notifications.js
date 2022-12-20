@@ -20,33 +20,24 @@ function Notifications({ existingUser, setExistingUser }) {
 
   const [bells, setBells] = useState([]);
 
-
-  
-  useEffect(()=>{
-
-        if (!user) {
+  useEffect(() => {
+    if (!user) {
       alert("No user, re-routing to the login page!");
       navigate("/login");
     } else {
       if (!existingUser) {
-       
-        axios.all(
-     axios.get(`${API}/users/${user.uid}`),
-     axios.get(`${API}/bells`)
-    
-    )
-    .then(axios.spread(function (userResponse, bellsResponse) {
-      setExistingUser( userResponse.data.payload);
-      setBells( bellsResponse.data.payload);
-    }))
-    .catch((err) => console.err)
+        axios
+          .all(axios.get(`${API}/users/${user.uid}`), axios.get(`${API}/bells`))
+          .then(
+            axios.spread(function (userResponse, bellsResponse) {
+              setExistingUser(userResponse.data.payload);
+              setBells(bellsResponse.data.payload);
+            })
+          )
+          .catch((err) => console.err);
       }
-
-
-
-  }},[])
- 
-
+    }
+  }, []);
 
   // useEffect(() => {
   //   if (!user) {
@@ -99,7 +90,7 @@ function Notifications({ existingUser, setExistingUser }) {
                   <img alt="nutritional-img" src={salad} />
                 </div>
                 <div className="type-text">
-                <h6 className="incomplete">Incomplete</h6>
+                  <h6 className="incomplete">Incomplete</h6>
                   <h2>Drink 8oz of Water</h2>
                   <h4>Most of the human body is water -</h4>
                   <h4>with an average of roughly 60%</h4>
@@ -146,7 +137,9 @@ function Notifications({ existingUser, setExistingUser }) {
                 <div className="type-text">
                   <h6 className="incomplete">Incomplete</h6>
                   <h2>Take your Multi-Vitamins</h2>
-                  <h4>Vitamin D can be produced in the skin from the sun’s energy</h4>
+                  <h4>
+                    Vitamin D can be produced in the skin from the sun’s energy
+                  </h4>
                 </div>
               </div>
               <div className="single-bell-right-three">
@@ -157,7 +150,7 @@ function Notifications({ existingUser, setExistingUser }) {
                   <h6 className="complete">Complete</h6>
                   <h2>Take One Deep Belly Breath!</h2>
                   <h4>Belly breathing stimulates the relaxation response </h4>
-                    <h4>targeting your parasympathetic nervous system</h4>
+                  <h4>targeting your parasympathetic nervous system</h4>
                 </div>
               </div>
             </div>

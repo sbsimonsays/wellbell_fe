@@ -36,16 +36,16 @@ function Rewards({ existingUser, setExistingUser }) {
   }, [user]);
 
   const showToast = () => {
-    toast("Take One Deep Belly Breath!"
-,  {
-        icon: "🔔 ",
+    toast("Take One Deep Belly Breath!", {
+      icon: "🔔 ",
       data: {
-        title: "Reach for a Healthy Treat!"
-,
+        title: "Reach for a Healthy Treat!",
         text: "We are here again with another article",
       },
     });
-    const audio = new Audio('https://drive.google.com/uc?export=download&id=1M95VOpto1cQ4FQHzNBaLf0WFQglrtWi7');
+    const audio = new Audio(
+      "https://drive.google.com/uc?export=download&id=1M95VOpto1cQ4FQHzNBaLf0WFQglrtWi7"
+    );
     audio.play();
   };
 
@@ -57,49 +57,63 @@ function Rewards({ existingUser, setExistingUser }) {
           <h1>{existingUser.firstname}'s Rewards</h1>
         </div>
 
-        <div className='rewards-info'>
-    <div className='progress-bars'>
-      <div className='physical-progress' onClick={showToast}>
-      <div> <ToastContainer position="top-center" className='Toastify__toast-container'/></div>
-        <div className='progress-info'>
-          <h2>Physical Points:</h2>
-      <PhysicalProgressBar className= "physicalbar" progress={existingUser.physicalpoints}/>
-      <h5>Points Untill Your Next Reward:</h5>
-      <h4>{100 - existingUser.physicalpoints}</h4>
-        </div>
-      </div>
-      <div className='nutritional-progress'>
-        <div className='progress-info'>
-          <h2>Nutritional Points:</h2>
-      <NutritionalProgressBar className= "nutritionalbar" progress={existingUser.nutritionalpoints}/>
-      <h5>Points Untill Your Next Reward:</h5>
-      <h4>{100 - existingUser.nutritionalpoints}</h4>
-        </div>
-      </div>
-      <div className='self-care-progress'>
-        <div className='progress-info'>
-          <h2>Self-Care Points:</h2>
-      <SelfCareProgressBar className= "selfcarebar" progress={existingUser.selfcarepoints}/>
-      <h5>Points Untill Your Next Reward:</h5>
-      <h4>{100 - existingUser.selfcarepoints}</h4>
-        </div>
-      </div>
-    </div>
-    <div  className='partners'>
-      
-<div className='partner-circles'>
-  <div className='partner-circles-text'>
-      <h5>In Partnership With </h5>
-  </div>
+        <div className="rewards-info">
+          <div className="progress-bars">
+            <div className="physical-progress" onClick={showToast}>
+              <div>
+                {" "}
+                <ToastContainer
+                  position="top-center"
+                  className="Toastify__toast-container"
+                />
+              </div>
+              <div className="progress-info">
+                <h2>Physical Points:</h2>
+                <PhysicalProgressBar
+                  className="physicalbar"
+                  progress={existingUser.physicalpoints}
+                />
+                <h5>Points Untill Your Next Reward:</h5>
+                <h4>{100 - existingUser.physicalpoints}</h4>
+              </div>
+            </div>
+            <div className="nutritional-progress">
+              <div className="progress-info">
+                <h2>Nutritional Points:</h2>
+                <NutritionalProgressBar
+                  className="nutritionalbar"
+                  progress={existingUser.nutritionalpoints}
+                />
+                <h5>Points Untill Your Next Reward:</h5>
+                <h4>{100 - existingUser.nutritionalpoints}</h4>
+              </div>
+            </div>
+            <div className="self-care-progress">
+              <div className="progress-info">
+                <h2>Self-Care Points:</h2>
+                <SelfCareProgressBar
+                  className="selfcarebar"
+                  progress={existingUser.selfcarepoints}
+                />
+                <h5>Points Untill Your Next Reward:</h5>
+                <h4>{100 - existingUser.selfcarepoints}</h4>
+              </div>
+            </div>
+          </div>
+          <div className="partners">
+            <div className="partner-circles">
+              <div className="partner-circles-text">
+                <h5>In Partnership With </h5>
+              </div>
 
-  <div className='partner-images'>
-<img className='partner-logo' src={bbandb}/>
-<img className='partner-logo' src={cliffbar}/>
-<img className='partner-logo' src={pfitness}/>
-<img className='partner-logo' src={smartwater}/>
-<img className='partner-logo' src={sephora}/>
-<img className='partner-logo' src={wholefoods}/>
-  </div>
+              <div className="partner-images">
+                <img className="partner-logo" src={bbandb} />
+                <img className="partner-logo" src={cliffbar} />
+                <img className="partner-logo" src={pfitness} />
+                <img className="partner-logo" src={smartwater} />
+                <img className="partner-logo" src={sephora} />
+                <img className="partner-logo" src={wholefoods} />
+              </div>
             </div>
           </div>
         </div>
