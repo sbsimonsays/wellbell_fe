@@ -62,9 +62,12 @@ Arbitrator: John Prado
     * PostgreSQL
 
 ### User Stories
-* get from Kenyetta
-* lorem ipsum
+    * Maria - Single Mother
 
 ### Deployment
+    * IN THE WORKS - WORKING ON IT TONIGHT!
 
 ### Future Goals
+    * Implement Haptic Feedback System
+    * Tracking A User's Bells and Their Preferences - Creating Promotional Partnerships to Provide Rewards as Incentives
+    * Partner Up With Companies & Integrate Into Employment (Employee Assistance Program)
