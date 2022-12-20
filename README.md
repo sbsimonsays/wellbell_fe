@@ -61,13 +61,13 @@ Arbitrator: John Prado
     * Node.js
     * PostgreSQL
 
-### User Stories
+* User Stories
     * Maria - Single Mother
 
-### Deployment
-    * IN THE WORKS - WORKING ON IT TONIGHT!
-
-### Future Goals
+* Future Goals
     * Implement Haptic Feedback System
     * Tracking A User's Bells and Their Preferences - Creating Promotional Partnerships to Provide Rewards as Incentives
     * Partner Up With Companies & Integrate Into Employment (Employee Assistance Program)
+    
+### Deployment
+    * IN THE WORKS - WORKING ON IT TONIGHT!
