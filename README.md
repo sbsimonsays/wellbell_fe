@@ -1,5 +1,5 @@
 # WellBell Wellness App
-Helping you take care of you - anywhere, anytime
+Helping you take care of you - anywhere, anytime.
 WellBell is a digital application designed to help you unplug from your daily grind and reconnect with your wellbeing.
 <img src="public/wellbell-teal.png"/>
 
